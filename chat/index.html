@@ -1,0 +1,202 @@
+<html>
+
+<head>
+    <title>Pioneer Chat</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f8f8;
+            overflow: hidden;
+        }
+
+        #chat-container {
+            width: 700px;
+            display: flex;
+            flex-direction: column;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            overflow-y: scroll;
+            max-height: 600px;
+        }
+
+        #chatBox {
+            flex-grow: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        .message {
+            color: #333;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            max-width: 70%;
+            text-align: left;
+            box-sizing: border-box;
+            overflow: scroll;
+        }
+
+        .user-message {
+            background-color: #848484;
+            color: #ffffff;
+        }
+
+        .bot-message {
+            background-color: #ababab;
+            color: #ffffff;
+        }
+
+        .error-message {
+            background-color: #ff7474;
+            color: #ffffff;
+        }
+
+        #chat-form {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            padding: 0 20px;
+        }
+
+        #userInput {
+            flex-grow: 1;
+            padding: 5px;
+            border: none;
+            border-radius: 3px;
+            margin-right: 10px;
+        }
+
+        #userInput:focus {
+            outline: none;
+        }
+
+        #sendButton {
+            border: none;
+            border-radius: 3px;
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        #sendButton:hover {
+            background-color: #0056b3;
+        }
+
+        #clearButton {
+            border: none;
+            border-radius: 3px;
+            padding: 5px 10px;
+            background-color: #ff7474;
+            color: #ffffff;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        #clearButton:hover {
+            background-color: #e64c4c;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <button id="clearButton" onclick="clearChat()">Clear Chat</button>
+        <div id="chat-container">
+            <div id="chatBox"></div>
+            <form id="chat-form" onsubmit="sendMessage(); return false;">
+                <input type="text" id="userInput" placeholder="Type your message..." />
+                <button type="submit" id="sendButton">Send</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const chatBox = document.getElementById('chatBox');
+        const userInput = document.getElementById('userInput');
+        const sendButton = document.getElementById('sendButton');
+
+        sendButton.addEventListener('click', sendMessage);
+        userInput.addEventListener('keypress', function (event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        function sendMessage() {
+            const message = userInput.value.trim();
+            if (message !== '') {
+                addUserMessage(message);
+                fetch('/api/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: {
+                        prompt: message
+                    },
+                })
+                    .then(response => response.json())
+                    .then(data => handleResponse(data))
+                    .catch(error => {
+                        console.error('Error:', error);
+                        addErrorMessage(error);
+                    });
+                userInput.value = '';
+            }
+        }
+
+        function handleResponse(data) {
+            let answer = data.answer || 'Sorry, I do not understand.';
+
+            if (answer === "*[time]") {
+                answer = "The current time is " + new Date().toLocaleTimeString() + ".";
+            }
+
+            addBotMessage(answer);
+        }
+
+
+        function addUserMessage(message) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('message', 'user-message');
+            messageElement.textContent = message;
+            chatBox.appendChild(messageElement);
+        }
+
+        function addBotMessage(message) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('message', 'bot-message');
+            messageElement.textContent = message;
+            chatBox.appendChild(messageElement);
+
+            // Scroll to the bottom of the chat container
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        function addErrorMessage(message) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('message', 'error-message');
+            messageElement.textContent = "Error processing request: " + message;
+            chatBox.appendChild(messageElement);
+        }
+
+        function clearChat() {
+            chatBox.innerHTML = '';
+        }
+    </script>
+</body>
+
+</html>
