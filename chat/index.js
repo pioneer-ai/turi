@@ -12,7 +12,7 @@ const manager = new NlpManager({ languages: ['en'] });
 
 // Load the trained model
 async function loadModel() {
-    await manager.load('./models/chat/model.nlp');
+    await manager.load('/disk/models/chat/model.nlp');
 }
 
 // Train and save the model
