@@ -1163,7 +1163,7 @@ async function trainChatModel() {
     });
 
     await manager.train();
-    await manager.save('./models/chat/model.nlp');
+    await manager.save('/disk/models/chat/model.nlp');
 }
 
 // Train the model
@@ -1177,7 +1177,7 @@ async function trainUltroModel() {
     });
 
     await manager.train();
-    await manager.save('./models/ultro/model.nlp');
+    await manager.save('/disk/models/ultro/model.nlp');
 }
 
 async function trainAllModels() {
