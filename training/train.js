@@ -1186,6 +1186,6 @@ async function trainAllModels() {
     //await trainUltroModel();
 }
 
-fs.writeFileSync("/disk/models/chat/model.nlp");
+fs.writeFileSync("/disk/models/chat/model.nlp", "");
 trainAllModels();
 //console.log(chatTrainingData.length.toString());
