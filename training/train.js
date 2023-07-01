@@ -1,4 +1,5 @@
 const { NlpManager } = require('node-nlp');
+const fs = require('fs');
 
 // Length = 143
 let chatTrainingData = [
@@ -1182,8 +1183,9 @@ async function trainUltroModel() {
 
 async function trainAllModels() {
     await trainChatModel();
-    await trainUltroModel();
+    //await trainUltroModel();
 }
 
+fs.linkSync("/disk/models/chat/model.nlp");
 trainAllModels();
 //console.log(chatTrainingData.length.toString());
