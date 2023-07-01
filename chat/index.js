@@ -37,6 +37,17 @@ app.get("/", (req, res) => {
     res.redirect("/chat");
 });
 
+app.get("/favicon.ico", (req, res) => {
+    fs.readFile('./favicon.ico', 'utf-8', (error, data) => {
+        if (error) {
+            console.error('Error reading file:', error);
+            res.status(500).send('Internal Server Error');
+        } else {
+            res.send(data);
+        }
+    });
+});
+
 // Serve index.html on /chat
 app.get('/chat', (req, res) => {
     fs.readFile('./chat/index.html', 'utf8', (error, data) => {
