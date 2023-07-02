@@ -51,18 +51,14 @@ app.get('/chat', (req, res) => {
 
 // Handle POST requests to /api/chat endpoint
 app.post('/api/chat', (req, res) => {
-    console.log(req.body);
     let message = req.body.prompt.toLowercase();
-    
-        manager.process('en', message)
-            .then((response) => {
-                let answer = response.answer || 'Sorry, I do not understand.';
-                answer = augmentMessage(answer);
-            })
-            .catch((error) => {
-                console.error('Error processing message:', error);
-                res.status(500).json({ error: 'Internal Server Error' });
-            });
+
+    try {
+        let response = manager.process('en', message).answer || 'Sorry, I do not understand.';
+        response = augmentMessage(response);
+    } catch (error) {
+        console.error('Error processing message:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
     }
 
     res.send({"answer": answer});
