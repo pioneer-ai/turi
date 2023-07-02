@@ -65,7 +65,7 @@ app.post('/api/chat', (req, res) => {
             });
     }
 
-    res.send(answer);
+    res.send({"answer": answer});
 });
 
 // Function to retrieve synonyms for a given word
