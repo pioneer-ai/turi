@@ -37,17 +37,6 @@ app.get("/", (req, res) => {
     res.redirect("/chat");
 });
 
-app.get("/favicon.ico", (req, res) => {
-    fs.readFile('./favicon.ico', 'utf-8', (error, data) => {
-        if (error) {
-            console.error('Error reading file:', error);
-            res.status(500).send('Internal Server Error');
-        } else {
-            res.send(data);
-        }
-    });
-});
-
 // Serve index.html on /chat
 app.get('/chat', (req, res) => {
     fs.readFile('./chat/index.html', 'utf8', (error, data) => {
@@ -63,43 +52,9 @@ app.get('/chat', (req, res) => {
 // Handle POST requests to /api/chat endpoint
 app.post('/api/chat', (req, res) => {
     console.log(req.body);
-    const message = req.body.prompt;
-    let answer = message.toLowerCase();
-
-    const mathRegex = /^(\d+)\s*([\+\-\*\/])\s*(\d+)$/;
-    const match = answer.match(mathRegex);
-
-    if (match) {
-        const num1 = parseInt(match[1]);
-        const operator = match[2];
-        const num2 = parseInt(match[3]);
-        let result;
-
-        switch (operator) {
-            case '+':
-                result = num1 + num2;
-                break;
-            case '-':
-                result = num1 - num2;
-                break;
-            case '*':
-                result = num1 * num2;
-                break;
-            case '/':
-                result = num1 / num2;
-                break;
-            default:
-                answer = 'Sorry, I cannot perform that calculation.';
-                break;
-        }
-
-        if (result !== undefined) {
-            answer = `The answer is ${result}.`;
-        } else {
-            answer = "Sorry, I can't preform that calculation.";
-        }
-    } else {
-        manager.process('en', answer)
+    let message = req.body.prompt.toLowercase();
+    
+        manager.process('en', message)
             .then((response) => {
                 let answer = response.answer || 'Sorry, I do not understand.';
                 answer = augmentMessage(answer);
