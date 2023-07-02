@@ -51,17 +51,23 @@ app.get('/chat', (req, res) => {
 
 // Handle POST requests to /api/chat endpoint
 app.post('/api/chat', (req, res) => {
-    let message = req.body.prompt.toLowercase();
+    let response, message;
+    if(req.body === "[object Object]") {
+        console.error('Invalid message - [object Object]');
+        res.send({ "answer": "*Error*: Invalid Request (not your fault). This means Pioneer Chat isn't working right now." });
+    }
+    message = req.body.prompt.toLowercase();
 
     try {
-        let response = manager.process('en', message).answer || 'Sorry, I do not understand.';
+        response = manager.process('en', message).answer || 'Sorry, I do not understand.';
         response = augmentMessage(response);
+        res.send({"answer": response});
     } catch (error) {
         console.error('Error processing message:', error);
-        res.status(500).json({ error: 'Internal Server Error' });
+        res.status(500).send({ error: 'Internal Server Error' });
     }
 
-    res.send({"answer": answer});
+    
 });
 
 // Function to retrieve synonyms for a given word
