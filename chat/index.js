@@ -55,11 +55,10 @@ app.post('/api/chat', (req, res) => {
     console.log(message);
 
     try {
-        aiResponse = manager.process('en', message);
-        console.log(aiResponse);
-        response = aiResponse.answer || 'Sorry, I do not understand.';
-        response = aiResponse.answer;
-        res.send({answer: response});
+        response = manager.process('en', message);
+        console.log(response);
+        response = response.answer || 'Sorry, I do not understand.';
+        res.send({ answer: response });
     } catch (error) {
         console.error('Error processing message:', error);
         res.status(500).send({ error: 'Internal Server Error' });
