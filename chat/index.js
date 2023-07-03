@@ -56,9 +56,9 @@ app.post('/api/chat', (req, res) => {
 
     try {
         aiResponse = manager.process('en', message);
-        console.log(aiResponse);
+        //console.log(aiResponse);
         response = aiResponse.answer || 'Sorry, I do not understand.';
-        response = augmentMessage(response);
+        //response = augmentMessage(response);
         res.send({answer: response});
     } catch (error) {
         console.error('Error processing message:', error);
@@ -69,6 +69,7 @@ app.post('/api/chat', (req, res) => {
 });
 
 // Function to retrieve synonyms for a given word
+/*
 function getSynonyms(word) {
     const wordSynonyms = synonyms(word);
 
@@ -99,3 +100,4 @@ function augmentMessage(message) {
     const augmentedMessage = augmentedWords.join(' ');
     return augmentedMessage;
 }
+*/
