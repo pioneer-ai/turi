@@ -142,6 +142,7 @@
             }
             sendNo = 1;
             const message = userInput.value.trim();
+            console.log(message);
             if (message !== '') {
                 addUserMessage(message);
                 fetch('/api/chat', {
