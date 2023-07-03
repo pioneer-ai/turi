@@ -52,7 +52,7 @@ app.get('/chat', (req, res) => {
 // Handle POST requests to /api/chat endpoint
 app.post('/api/chat', (req, res) => {
     let response, message;
-    message = req.body.prompt.toLowercase();
+    message = req.body.prompt.toLowerCase();
 
     try {
         response = manager.process('en', message).answer || 'Sorry, I do not understand.';
