@@ -151,7 +151,7 @@
                         'Content-Type': 'application/json',
                     },
                     body: {
-                        prompt: message
+                        "prompt": message
                     },
                 })
                     .then(response => response.json())
@@ -172,7 +172,6 @@
             }
 
             addBotMessage(answer);
-            sendNo = 0;
         }
 
 
@@ -191,6 +190,7 @@
 
             // Scroll to the bottom of the chat container
             chatBox.scrollTop = chatBox.scrollHeight;
+            sendNo = 0;
         }
 
         function addErrorMessage(message) {
@@ -198,6 +198,7 @@
             messageElement.classList.add('message', 'error-message');
             messageElement.textContent = "Error processing request: " + message;
             chatBox.appendChild(messageElement);
+            sendNo = 0;
         }
 
         function clearChat() {
