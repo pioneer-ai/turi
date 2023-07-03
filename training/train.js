@@ -577,8 +577,6 @@ let trainingData = [
     }
 ];
 
-console.log("NPG-0 Model Params: " + trainingData.length.toString());
-
 // Train the model
 async function trainModel() {
     // Create an instance of the NLP manager
@@ -591,6 +589,7 @@ async function trainModel() {
 
     await manager.train();
     await manager.save('/disk/models/npg-0/model.nlp');
+    console.log("NPG-0 Model Params: " + trainingData.length.toString());
 }
 
 fs.writeFileSync("/disk/models/npg-0/model.nlp", "");
