@@ -136,8 +136,8 @@
         });
 
         function sendMessage() {
-            const message = userInput.value.trim();
-            console.log(message);
+            //const message = userInput.value.trim();
+            let message = "Hi";
             if (message !== '') {
                 addUserMessage(message);
                 fetch('/api/chat', {
