@@ -211,6 +211,7 @@
 
         function clearChat() {
             chatBox.innerHTML = '';
+            convId = generateConversationId();
         }
 
         function generateConversationId() {
@@ -220,7 +221,7 @@
         }
 
         function onPageLoad() {
-            convId = generateConversationId;
+            convId = generateConversationId();
         }
     </script>
 </body>
