@@ -124,6 +124,7 @@
     </div>
 
     <script>
+        let sendNo = 0;
         const chatBox = document.getElementById('chatBox');
         const userInput = document.getElementById('userInput');
         const sendButton = document.getElementById('sendButton');
@@ -136,8 +137,11 @@
         });
 
         function sendMessage() {
-            //const message = userInput.value.trim();
-            let message = "Hi";
+            if(sendNo === 1) {
+                return;
+            }
+            sendNo = 1;
+            const message = userInput.value.trim();
             if (message !== '') {
                 addUserMessage(message);
                 fetch('/api/chat', {
@@ -167,6 +171,7 @@
             }
 
             addBotMessage(answer);
+            sendNo = 0;
         }
 
 
