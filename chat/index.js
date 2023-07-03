@@ -52,16 +52,12 @@ app.get('/chat', (req, res) => {
 // Handle POST requests to /api/chat endpoint
 app.post('/api/chat', (req, res) => {
     let response, message;
-    if(req.body === "[object Object]") {
-        console.error('Invalid message - [object Object]');
-        res.send({ "answer": "*Error*: Invalid Request (not your fault). This means Pioneer Chat isn't working right now." });
-    }
     message = req.body.prompt.toLowercase();
 
     try {
         response = manager.process('en', message).answer || 'Sorry, I do not understand.';
         response = augmentMessage(response);
-        res.send({"answer": response});
+        res.send({answer: response});
     } catch (error) {
         console.error('Error processing message:', error);
         res.status(500).send({ error: 'Internal Server Error' });
