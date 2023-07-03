@@ -9,7 +9,7 @@ let trainingData = [
     },
     {
         "input": "technical info",
-        "output": "MODEL: Pioneer UltroChat (chat.nlp) NLP Model (v1.5463) (chat.nlp) INPUTS: Pioneer UltroChat (chat.nlp) == 138 Inputs MODEL-TYPE: Free Research Preview (Pioneer UltroChat FRP v1.5463)"
+        "output": "Model: Naturalistic Pre-trained Generation (NPG-0) model Codename: Kumquat Zero Model info: 143 params, 1.0MB XXS Model"
     },
     {
         "input": "thanks",
