@@ -49,16 +49,15 @@ app.get('/chat', (req, res) => {
 });
 
 // Handle POST requests to /api/chat endpoint
-app.post('/api/chat', (req, res) => {
-    let response, message;
-    message = req.body.prompt.toLowerCase();
+app.post('/api/chat', async (req, res) => {
+    const message = req.body.prompt.toLowerCase();
     console.log(message);
 
     try {
-        response = manager.process('en', message);
+        const response = await manager.process('en', message);
         console.log(response);
-        response = response.answer || 'Sorry, I do not understand.';
-        res.send({ answer: response });
+        const answer = response.answer || 'Sorry, I do not understand.';
+        res.send({ answer });
     } catch (error) {
         console.error('Error processing message:', error);
         res.status(500).send({ error: 'Internal Server Error' });
