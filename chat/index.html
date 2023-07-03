@@ -147,9 +147,9 @@
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: {
+                    body: JSON.stringify({
                         prompt: message
-                    },
+                    }),
                 };
             console.log(message);
             if (message !== '') {
