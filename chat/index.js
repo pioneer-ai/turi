@@ -53,13 +53,13 @@ app.get('/chat', (req, res) => {
 app.post('/api/chat', (req, res) => {
     let response, message;
     message = req.body.prompt.toLowerCase();
+    console.log(message);
 
     try {
         aiResponse = manager.process('en', message);
         //console.log(aiResponse);
         //response = aiResponse.answer || 'Sorry, I do not understand.';
         response = aiResponse.answer;
-        console.log("Response to " + message + " = " + response + ".")
         //response = augmentMessage(response);
         res.send({answer: response});
     } catch (error) {
