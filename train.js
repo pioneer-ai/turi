@@ -1,7 +1,7 @@
 const { NlpManager } = require('node-nlp');
 const fs = require('fs');
 
-// Length = 145
+// Length = 146
 let trainingData = [
     {
         "input": "hi",
@@ -9,7 +9,7 @@ let trainingData = [
     },
     {
         "input": "technical info",
-        "output": "Model: Naturalistic Pre-trained Generation (NPG-0) Model Codename: Kumquat Zero Model info: 145 params, 0.93MB XXS Model"
+        "output": "Model: Naturalistic Pre-trained Generation (NPG-0) Model Codename: Kumquat Zero Model info: 146 params, 0.93MB XXS Model"
     },
     {
         "input": "thanks",
@@ -26,6 +26,10 @@ let trainingData = [
     {
         "input": "what is npg-0",
         "output": "NPG-0 (Naturalistic Pre-trained Generation) is a NLP model for engaging in conversation and chatting. It is used in the chatbot Pioneer Chat."
+    },
+    {
+        "input": "what is nlp",
+        "output": "Natural Language Processing (NLP) is a type of AI or machine learning where a AI model can interpret and utilize natural text."
     },
     {
         "input": "what are you",
