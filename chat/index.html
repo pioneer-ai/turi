@@ -125,10 +125,13 @@
 
     <script>
         let sendNo = 0;
+        let convId;
+
         const chatBox = document.getElementById('chatBox');
         const userInput = document.getElementById('userInput');
         const sendButton = document.getElementById('sendButton');
-
+        
+        document.onload = onPageLoad();
         sendButton.addEventListener('click', sendMessage);
         userInput.addEventListener('keypress', function (event) {
             if (event.key === 'Enter') {
@@ -137,21 +140,25 @@
         });
 
         function sendMessage() {
-            if(sendNo === 1) {
+            if (sendNo === 1) {
                 return;
             }
+
             sendNo = 1;
+
             const message = userInput.value.trim();
+
             let fetchData = {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        prompt: message
-                    }),
-                };
-            console.log(message);
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    prompt: message,
+                    conversationId: convId
+                }),
+            };
+            
             if (message !== '') {
                 addUserMessage(message);
                 fetch('/api/chat', fetchData)
@@ -204,6 +211,16 @@
 
         function clearChat() {
             chatBox.innerHTML = '';
+        }
+
+        function generateConversationId() {
+            const timestamp = Date.now();
+            const randomString = Math.random().toString(36).substring(2, 15);
+            return `${timestamp}_${randomString}`;
+        }
+
+        function onPageLoad() {
+            convId = generateConversationId;
         }
     </script>
 </body>

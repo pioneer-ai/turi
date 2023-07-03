@@ -64,10 +64,11 @@ app.get('/chat', (req, res) => {
 // Handle POST requests to /api/chat endpoint
 app.post('/api/chat', async (req, res) => {
     const message = req.body.prompt.toLowerCase();
+    const conversationId = req.body.conversationId;
 
     // Check for explicit content asynchronously
     const hasExplicitContent = await containsExplicitContent(message);
-        
+
     if (hasExplicitContent) {
         response = "I'm sorry, but I cannot respond to that request.";
         res.send({ answer: response });
@@ -75,7 +76,9 @@ app.post('/api/chat', async (req, res) => {
     }
 
     try {
-        const response = await manager.process('en', message);
+        const context = manager.createContext(conversationId);
+        //const response = await manager.process('en', message);
+        const response = await manager.process('en', message, context);
         const answer = response.answer || 'Sorry, I do not understand.';
         res.send({ answer });
     } catch (error) {

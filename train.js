@@ -600,5 +600,4 @@ async function trainModel() {
     console.log("NPG-0 Model Params: " + trainingData.length.toString());
 }
 
-fs.writeFileSync("/disk/models/npg-0/model.nlp", "");
 trainModel();
