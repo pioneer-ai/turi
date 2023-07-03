@@ -142,10 +142,7 @@
             }
             sendNo = 1;
             const message = userInput.value.trim();
-            console.log(message);
-            if (message !== '') {
-                addUserMessage(message);
-                fetch('/api/chat', {
+            let fetchData = {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -153,7 +150,11 @@
                     body: {
                         "prompt": message
                     },
-                })
+                };
+            console.log(message);
+            if (message !== '') {
+                addUserMessage(message);
+                fetch('/api/chat', fetchData)
                     .then(response => response.json())
                     .then(data => handleResponse(data))
                     .catch(error => {
