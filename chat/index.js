@@ -53,19 +53,19 @@ app.get('/chat', (req, res) => {
 app.post('/api/chat', (req, res) => {
     let response, message;
     message = req.body.prompt.toLowerCase();
-    console.log(message);
+    //console.log(message);
 
-    try {
+    //try {
         aiResponse = manager.process('en', message);
-        //console.log(aiResponse);
+        console.log(aiResponse);
         //response = aiResponse.answer || 'Sorry, I do not understand.';
         response = aiResponse.answer;
         //response = augmentMessage(response);
         res.send({answer: response});
-    } catch (error) {
-        console.error('Error processing message:', error);
-        res.status(500).send({ error: 'Internal Server Error' });
-    }
+    //} catch (error) {
+        //console.error('Error processing message:', error);
+        //res.status(500).send({ error: 'Internal Server Error' });
+    //}
 
     
 });
