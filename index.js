@@ -64,7 +64,6 @@ app.get('/chat', (req, res) => {
 // Handle POST requests to /api/chat endpoint
 app.post('/api/chat', async (req, res) => {
     const message = req.body.prompt.toLowerCase();
-    const conversationId = req.body.conversationId;
 
     // Check for explicit content asynchronously
     const hasExplicitContent = await containsExplicitContent(message);
@@ -76,9 +75,7 @@ app.post('/api/chat', async (req, res) => {
     }
 
     try {
-        const context = manager.createContext(conversationId);
-        //const response = await manager.process('en', message);
-        const response = await manager.process('en', message, context);
+        const response = await manager.process('en', message);
         const answer = response.answer || 'Sorry, I do not understand.';
         res.send({ answer });
     } catch (error) {
