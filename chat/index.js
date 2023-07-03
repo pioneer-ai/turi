@@ -55,7 +55,9 @@ app.post('/api/chat', (req, res) => {
     message = req.body.prompt.toLowerCase();
 
     try {
-        response = manager.process('en', message).answer || 'Sorry, I do not understand.';
+        aiResponse = manager.process('en', message);
+        console.log(aiResponse);
+        response = aiResponse.answer || 'Sorry, I do not understand.';
         response = augmentMessage(response);
         res.send({answer: response});
     } catch (error) {
