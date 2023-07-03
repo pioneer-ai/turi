@@ -63,11 +63,9 @@ app.get('/chat', (req, res) => {
 // Handle POST requests to /api/chat endpoint
 app.post('/api/chat', async (req, res) => {
     const message = req.body.prompt.toLowerCase();
-    console.log(message);
 
     try {
         const response = await manager.process('en', message);
-        console.log(response);
         const answer = response.answer || 'Sorry, I do not understand.';
         res.send({ answer });
     } catch (error) {
