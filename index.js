@@ -64,8 +64,10 @@ app.get('/chat', (req, res) => {
 app.post('/api/chat', async (req, res) => {
     const message = req.body.prompt.toLowerCase();
 
-    // Check for explicit content
-    if (containsExplicitContent(message)) {
+    // Check for explicit content asynchronously
+    const hasExplicitContent = await containsExplicitContent(message);
+        
+    if (hasExplicitContent) {
         response = "I'm sorry, but I cannot respond to that request.";
         res.send({ answer: response });
         return;
@@ -83,10 +85,10 @@ app.post('/api/chat', async (req, res) => {
 
 // Function to check if the message contains explicit content
 function containsExplicitContent(message) {
-    // Use a content filtering library or service here to check for explicit content
-    // For example, using the 'bad-words' library
-    const Filter = require('bad-words');
-    const filter = new Filter();
-
-    return filter.isProfane(message);
+    return new Promise((resolve, reject) => {
+        // Use the content filtering library or service here to check for explicit content
+        // For example, using the 'bad-words' library
+        const hasExplicitContent = filter.isProfane(message);
+        resolve(hasExplicitContent);
+    });
 }
