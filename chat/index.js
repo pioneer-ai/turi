@@ -59,6 +59,7 @@ app.post('/api/chat', (req, res) => {
         //console.log(aiResponse);
         //response = aiResponse.answer || 'Sorry, I do not understand.';
         response = aiResponse.answer;
+        console.log("Response to " + message + " = " + response + ".")
         //response = augmentMessage(response);
         res.send({answer: response});
     } catch (error) {
