@@ -33,10 +33,22 @@ app.use(bodyParser.json());
 
 // Redirect / to /chat
 app.get("/", (req, res) => {
-    res.redirect("/chat");
+    res.redirect("/info");
 });
 
-// Serve index.html on /chat
+// Serve ./info/index.html on /info
+app.get("/info", (req, res) => {
+    fs.readFile('./info/index.html', 'utf8', (error, data) => {
+        if (error) {
+            console.error('Error reading file:', error);
+            res.status(500).send('Internal Server Error');
+        } else {
+            res.send(data);
+        }
+    });
+});
+
+// Serve ./chat/index.html on /chat
 app.get('/chat', (req, res) => {
     fs.readFile('./chat/index.html', 'utf8', (error, data) => {
         if (error) {
