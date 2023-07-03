@@ -1,7 +1,7 @@
 const { NlpManager } = require('node-nlp');
 const fs = require('fs');
 
-// Length = 143
+// Length = 144
 let trainingData = [
     {
         "input": "hi",
@@ -18,6 +18,10 @@ let trainingData = [
     {
         "input": "who are you",
         "output": "I'm Pioneer Chat - Your AI chatbot."
+    },
+    {
+        "input": "what can you do",
+        "output": "I can chat with you and provide generic information on a topic. For more information head to https://pioneer.fifly.org/info."
     },
     {
         "input": "what are you",
