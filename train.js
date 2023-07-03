@@ -9,7 +9,7 @@ let trainingData = [
     },
     {
         "input": "technical info",
-        "output": "Model: Naturalistic Pre-trained Generation (NPG-0) Model Codename: Kumquat Zero Model info: 145 params, 1.0MB XXS Model"
+        "output": "Model: Naturalistic Pre-trained Generation (NPG-0) Model Codename: Kumquat Zero Model info: 145 params, 0.93MB XXS Model"
     },
     {
         "input": "thanks",
