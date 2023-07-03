@@ -2,6 +2,7 @@ const express = require('express');
 const { NlpManager } = require('node-nlp');
 const fs = require('fs');
 const bodyParser = require('body-parser');
+const Filter = require('bad-words');
 
 const app = express();
 const port = 8080;
@@ -86,8 +87,7 @@ app.post('/api/chat', async (req, res) => {
 // Function to check if the message contains explicit content
 function containsExplicitContent(message) {
     return new Promise((resolve, reject) => {
-        // Use the content filtering library or service here to check for explicit content
-        // For example, using the 'bad-words' library
+        const filter = Filter();
         const hasExplicitContent = filter.isProfane(message);
         resolve(hasExplicitContent);
     });
