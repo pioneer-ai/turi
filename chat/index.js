@@ -2,7 +2,6 @@ const express = require('express');
 const { NlpManager } = require('node-nlp');
 const fs = require('fs');
 const bodyParser = require('body-parser');
-const synonyms = require('synonyms');
 
 const app = express();
 const port = 8080;
@@ -53,53 +52,16 @@ app.get('/chat', (req, res) => {
 app.post('/api/chat', (req, res) => {
     let response, message;
     message = req.body.prompt.toLowerCase();
-    //console.log(message);
+    console.log(message);
 
-    //try {
+    try {
         aiResponse = manager.process('en', message);
         console.log(aiResponse);
-        //response = aiResponse.answer || 'Sorry, I do not understand.';
+        response = aiResponse.answer || 'Sorry, I do not understand.';
         response = aiResponse.answer;
-        //response = augmentMessage(response);
         res.send({answer: response});
-    //} catch (error) {
-        //console.error('Error processing message:', error);
-        //res.status(500).send({ error: 'Internal Server Error' });
-    //}
-
-    
+    } catch (error) {
+        console.error('Error processing message:', error);
+        res.status(500).send({ error: 'Internal Server Error' });
+    }
 });
-
-// Function to retrieve synonyms for a given word
-/*
-function getSynonyms(word) {
-    const wordSynonyms = synonyms(word);
-
-    if (wordSynonyms && wordSynonyms.length > 0) {
-        const flattenedSynonyms = wordSynonyms.flat();
-        return flattenedSynonyms;
-    }
-
-    return [word]; // Fallback to the original word if no synonyms are found
-}
-
-// Function to perform data augmentation on a message
-function augmentMessage(message) {
-    const words = message.split(' ');
-    const augmentedWords = [];
-
-    for (const word of words) {
-        try {
-            const wordSynonyms = getSynonyms(word);
-            const randomSynonym = wordSynonyms[Math.floor(Math.random() * wordSynonyms.length)];
-            augmentedWords.push(randomSynonym || word);
-        } catch (err) {
-            console.error(`Error retrieving synonyms for "${word}":`, err);
-            augmentedWords.push(word);
-        }
-    }
-
-    const augmentedMessage = augmentedWords.join(' ');
-    return augmentedMessage;
-}
-*/
