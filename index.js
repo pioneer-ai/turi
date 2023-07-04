@@ -13,21 +13,21 @@ const port = 8080;
 const manager = new NlpManager({ languages: ['en'] });
 
 // Load the trained model
-async function loadModel() {
+async function loadNpgModel() {
     await manager.load('/disk/models/npg-0/model.nlp');
 }
 
 // Train and save the model
-loadModel()
+loadNpgModel()
     .then(() => {
-        console.log('Model loaded successfully.');
+        console.log('NPG-0 model loaded successfully.');
         // Start the server after training the model
         app.listen(port, () => {
             console.log(`Server is running on http://localhost:${port}`);
         });
     })
     .catch((err) => {
-        console.error('Error training or saving the model:', err);
+        console.error('Error loading the model:', err);
     });
 
 // Set up the Express routes
@@ -125,13 +125,13 @@ function containsExplicitContent(message) {
 }
 
 // Load your trained image generation model
-async function loadModel() {
-    const model = await tf.loadLayersModel('/disk/models/rpi-0/model.json');
+async function loadRpiModel() {
+    const model = await tf.loadLayersModel('/disk/models/rpi-0.json');
     return model;
 }
 
 async function generateDataImg(prompt) {
-    const model = await loadModel();
+    const model = await loadRpiModel();
 
     // Preprocess the textual prompt (e.g., convert to numerical representation)
     const promptTensor = preprocessText(promptText);

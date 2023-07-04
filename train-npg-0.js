@@ -840,9 +840,7 @@ async function trainModel() {
     });
 
     await manager.train();
-    fs.mkdir("/disk/models/npg-0");
-    fs.writeFile("/disk/models/npg-0/model.nlp", "");
-    await manager.save('/disk/models/npg-0/model.nlp');
+    await manager.save('/disk/models/npg-0.nlp');
     console.log("NPG-0 Model Params: " + trainingData.length.toString());
     console.log("NPG-0 Model trained and saved successfully!");
 }
