@@ -3,6 +3,8 @@ const { NlpManager } = require('node-nlp');
 const fs = require('fs');
 const bodyParser = require('body-parser');
 const Filter = require('bad-words');
+const tf = require('@tensorflow/tfjs');
+require('@tensorflow/tfjs-node');
 
 const app = express();
 const port = 8080;
@@ -84,6 +86,35 @@ app.post('/api/chat', async (req, res) => {
     }
 });
 
+// Handle POST requests to /api/img endpoint
+app.post('/api/img', async (req, res) => {
+    const message = req.body.prompt.toLowerCase();
+
+    // Check for explicit content asynchronously
+    const hasExplicitContent = await containsExplicitContent(message);
+
+    if (hasExplicitContent) {
+        let response = {
+            message: "I'm sorry, but I cannot respond to that request.",
+            type: "text"
+        };
+        res.send(response);
+        return;
+    }
+
+    try {
+        const img = await generateDataImg(message);
+        const resp = {
+            message: img,
+            type: "img"
+        };
+        res.send(resp);
+    } catch (error) {
+        console.error('Error processing message:', error);
+        res.status(500).send({ error: 'Internal Server Error' });
+    }
+});
+
 // Function to check if the message contains explicit content
 function containsExplicitContent(message) {
     return new Promise((resolve, reject) => {
@@ -91,4 +122,70 @@ function containsExplicitContent(message) {
         const hasExplicitContent = filter.isProfane(message);
         resolve(hasExplicitContent);
     });
+}
+
+// Load your trained image generation model
+async function loadModel() {
+    const model = await tf.loadLayersModel('/disk/models/rpi-0/model.json');
+    return model;
+}
+
+function generateDataImg(prompt) {
+    const model = await loadModel();
+
+    // Preprocess the textual prompt (e.g., convert to numerical representation)
+    const promptTensor = preprocessText(promptText);
+
+    // Generate the image from the prompt
+    let tensor = model.predict(promptTensor);
+
+    const canvas = document.createElement('canvas');
+    const [width, height, channels] = tensor.shape;
+
+    // Set canvas dimensions
+    canvas.width = width;
+    canvas.height = height;
+
+    const ctx = canvas.getContext('2d');
+
+    // Normalize tensor values to the range [0, 255]
+    const normalizedTensor = tf.mul(tf.add(tensor, 1), 127.5);
+
+    // Create an image buffer from the tensor data
+    const imageBuffer = new Uint8ClampedArray(normalizedTensor.dataSync());
+
+    // Create ImageData object from the buffer
+    const imageData = new ImageData(imageBuffer, width, height);
+
+    // Draw the image data onto the canvas
+    ctx.putImageData(imageData, 0, 0);
+
+    // Get the data URL from the canvas
+    const dataUrl = canvas.toDataURL();
+
+    return dataUrl;
+}
+
+function preprocessText(promptText) {
+    // Define your text preprocessing logic here
+    // ...
+
+    // For illustration purposes, let's assume a simple one-hot encoding
+
+    const vocabulary = ['cat', 'dog', 'bird']; // Example vocabulary
+    const promptTokens = promptText.split(' ');
+
+    // Create a tensor with the same length as the vocabulary
+    const tensorShape = [1, vocabulary.length];
+    const promptTensor = tf.buffer(tensorShape);
+
+    // Encode the text prompt as a one-hot tensor
+    promptTokens.forEach((token) => {
+        const tokenIndex = vocabulary.indexOf(token);
+        if (tokenIndex !== -1) {
+            promptTensor.set(1, 0, tokenIndex);
+        }
+    });
+
+    return promptTensor.toTensor();
 }

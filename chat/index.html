@@ -129,7 +129,7 @@
         const chatBox = document.getElementById('chatBox');
         const userInput = document.getElementById('userInput');
         const sendButton = document.getElementById('sendButton');
-        
+
         sendButton.addEventListener('click', sendMessage);
         userInput.addEventListener('keypress', function (event) {
             if (event.key === 'Enter') {
@@ -155,12 +155,12 @@
                     prompt: message
                 }),
             };
-            
+
             if (message !== '') {
                 addUserMessage(message);
                 fetch('/api/chat', fetchData)
                     .then(response => response.json())
-                    .then(data => handleResponse(data))
+                    .then(data => handleResponse(data, message))
                     .catch(error => {
                         console.error('Error:', error);
                         addErrorMessage(error);
@@ -169,16 +169,46 @@
             }
         }
 
-        function handleResponse(data) {
+        function handleResponse(data, prompt) {
             let answer = data.answer || 'Sorry, I do not understand.';
 
             if (answer === "*[time]") {
                 answer = "The current time is " + new Date().toLocaleTimeString() + ".";
+            } else if (answer == "*[img-cat]") {
+                let fetchData = {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        prompt: prompt
+                    }),
+                };
+
+                fetch('/api/img', imgSendData)
+                    .then(response => response.json())
+                    .then(data => {
+                        handleImgResponse(data);
+                        return;
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        addErrorMessage(error);
+                    });
             }
 
             addBotMessage(answer);
         }
 
+        function handleImgResponse(data) {
+            if (data.type === "img") {
+                let dataUrl = data.message;
+                addBotImg(dataUrl);
+            } else {
+                let msg = data.message;
+                addBotMessage(msg);
+            }
+        }
 
         function addUserMessage(message) {
             const messageElement = document.createElement('div');
@@ -191,6 +221,19 @@
             const messageElement = document.createElement('div');
             messageElement.classList.add('message', 'bot-message');
             messageElement.textContent = message;
+            chatBox.appendChild(messageElement);
+
+            // Scroll to the bottom of the chat container
+            chatBox.scrollTop = chatBox.scrollHeight;
+            sendNo = 0;
+        }
+
+        function addBotImg(message) {
+            const messageElement = document.createElement('div');
+            const imgElement = document.createElement('img');
+            imgElement.src = message;
+            messageElement.classList.add('message', 'bot-message');
+            messageElement.appendChild(imgElement);
             chatBox.appendChild(messageElement);
 
             // Scroll to the bottom of the chat container

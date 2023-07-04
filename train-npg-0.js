@@ -1,11 +1,15 @@
 const { NlpManager } = require('node-nlp');
 const fs = require('fs');
 
-// Length = 205
+// Length = 206
 let trainingData = [
     {
         "input": "hi",
         "output": "Hello!"
+    },
+    {
+        "input": "generate an image of a cat",
+        "output": "*[img-cat]"
     },
     {
         "input": "technical info",
@@ -838,6 +842,7 @@ async function trainModel() {
     await manager.train();
     await manager.save('/disk/models/npg-0/model.nlp');
     console.log("NPG-0 Model Params: " + trainingData.length.toString());
+    console.log("NPG-0 Model trained and saved successfully!");
 }
 
 trainModel();
