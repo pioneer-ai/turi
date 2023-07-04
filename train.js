@@ -1,7 +1,7 @@
 const { NlpManager } = require('node-nlp');
 const fs = require('fs');
 
-// Length = 206
+// Length = 205
 let trainingData = [
     {
         "input": "hi",
@@ -822,6 +822,66 @@ let trainingData = [
       {
         "input": "what's the best way to study for exams?",
         "output": "The best way to study for exams is to create a study schedule, break down the material into manageable chunks, review and practice regularly, and use active learning techniques."
+      },
+      {
+        "input": "write a hello world function in JavaScript",
+        "output": "function sayHello() {\n  console.log('Hello World!');\n}"
+      },
+      {
+        "input": "implement a merge sort algorithm in Python",
+        "output": "def merge_sort(arr):\n    if len(arr) <= 1:\n        return arr\n    mid = len(arr) // 2\n    left = merge_sort(arr[:mid])\n    right = merge_sort(arr[mid:])\n    return merge(left, right)\n\n# Helper function for merging two sorted arrays\n\n# code for merging goes here\n"
+      },
+      {
+        "input": "create a class for a person in Java",
+        "output": "public class Person {\n    private String name;\n    private int age;\n\n    public Person(String name, int age) {\n        this.name = name;\n        this.age = age;\n    }\n\n    // getters and setters\n\n    // code for methods goes here\n}"
+      },
+      {
+        "input": "sort an array of strings in alphabetical order using C#",
+        "output": "public static void SortArray(string[] arr)\n{\n    Array.Sort(arr);\n    // code here\n}"
+      },
+      {
+        "input": "check if a number is prime in C++",
+        "output": "bool isPrime(int num) {\n    if (num <= 1) {\n        return false;\n    }\n\n    for (int i = 2; i * i <= num; i++) {\n        if (num % i == 0) {\n            return false;\n        }\n    }\n\n    return true;\n}"
+      },
+      {
+        "input": "create a function to calculate the area of a circle in Ruby",
+        "output": "def calculate_circle_area(radius)\n  return Math::PI * radius * radius\nend"
+      },
+      {
+        "input": "implement a stack data structure in JavaScript",
+        "output": "class Stack {\n  constructor() {\n    this.items = [];\n  }\n\n  push(element) {\n    this.items.push(element);\n  }\n\n  pop() {\n    if (this.items.length === 0) {\n      return null;\n    }\n    return this.items.pop();\n  }\n\n  // code for other methods goes here\n}"
+      },
+      {
+        "input": "reverse a string in Python",
+        "output": "def reverse_string(str):\n    return str[::-1]"
+      },
+      {
+        "input": "check if a number is even in Java",
+        "output": "public static boolean isEven(int num) {\n    return num % 2 == 0;\n}"
+      },
+      {
+        "input": "create a function to calculate the factorial of a number in JavaScript",
+        "output": "function calculateFactorial(number) {\n    if (number <= 1) {\n        return 1;\n    }\n    return number * calculateFactorial(number - 1);\n}"
+      },
+      {
+        "input": "find the maximum value in an array in C#",
+        "output": "public static int FindMaxValue(int[] arr)\n{\n    int max = arr[0];\n    for (int i = 1; i < arr.Length; i++)\n    {\n        if (arr[i] > max)\n        {\n            max = arr[i];\n        }\n    }\n    return max;\n}"
+      },
+      {
+        "input": "calculate the sum of all numbers from 1 to n in Python",
+        "output": "def calculate_sum(n):\n    return sum(range(1, n + 1))"
+      },
+      {
+        "input": "create a class for a car in C++",
+        "output": "class Car {\npublic:\n    string make;\n    string model;\n    int year;\n\n    Car(string make, string model, int year)\n    {\n        this->make = make;\n        this->model = model;\n        this->year = year;\n    }\n\n    // code for methods goes here\n};"
+      },
+      {
+        "input": "sort an array of numbers in ascending order in Ruby",
+        "output": "def sort_array_ascending(arr)\n  arr.sort\nend"
+      },
+      {
+        "input": "check if a string is a palindrome in JavaScript",
+        "output": "function isPalindrome(str) {\n    let reversed = str.split('').reverse().join('');\n    return str === reversed;\n}"
       }
 ];
 
