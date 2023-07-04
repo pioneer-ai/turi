@@ -60,6 +60,7 @@ async function trainAndSaveModel() {
     await trainModel(model, { trainImages, trainLabels }, 10, 32);
 
     fs.mkdir("/disk/models/rpi-0");
+    fs.writeFile("/disk/models/rpi-0/model.json", "");
 
     // Save the trained model
     await model.save('/disk/models/rpi-0/model.json');
