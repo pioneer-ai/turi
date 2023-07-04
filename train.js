@@ -1,7 +1,7 @@
 const { NlpManager } = require('node-nlp');
 const fs = require('fs');
 
-// Length = 204
+// Length = 205
 let trainingData = [
     {
         "input": "hi",
@@ -25,6 +25,10 @@ let trainingData = [
     },
     {
         "input": "what is npg-0",
+        "output": "NPG-0 (Naturalistic Pre-trained Generation) is a NLP model for engaging in conversation and chatting. It is used in the chatbot Pioneer Chat."
+    },
+    {
+        "input": "what company owns pioneer labs",
         "output": "NPG-0 (Naturalistic Pre-trained Generation) is a NLP model for engaging in conversation and chatting. It is used in the chatbot Pioneer Chat."
     },
     {
