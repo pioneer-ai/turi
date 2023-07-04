@@ -1,7 +1,7 @@
 const { NlpManager } = require('node-nlp');
 const fs = require('fs');
 
-// Length = 146
+// Length = 204
 let trainingData = [
     {
         "input": "hi",
