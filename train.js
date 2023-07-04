@@ -21,7 +21,7 @@ let trainingData = [
     },
     {
         "input": "what can you do",
-        "output": "I can chat with you and provide generic information on a topic. For more information head to https://pioneer.fifly.org/info."
+        "output": "I can chat with you and provide generic information on a topic. For more information head to https://pioneer.fifly.org/info/."
     },
     {
         "input": "what is npg-0",
@@ -29,7 +29,7 @@ let trainingData = [
     },
     {
         "input": "what company owns pioneer labs",
-        "output": "NPG-0 (Naturalistic Pre-trained Generation) is a NLP model for engaging in conversation and chatting. It is used in the chatbot Pioneer Chat."
+        "output": "Pioneer Labs is owned by FiFly, Corp. FiFly's website is https://www.fifly.org/"
     },
     {
         "input": "what is nlp",
