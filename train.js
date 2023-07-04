@@ -586,7 +586,239 @@ let trainingData = [
     {
         "input": "how to create a file in node.js",
         "output": "You can create a file in Node.js as following:\nconst fs = require('fs');\n\nfs.writeFileSync(\"./a/path/to/some.where\");\nRemember to replace the path in fs.writeFileSync() to the path you want."
-    }
+    },
+    {
+        "input": "what's the best way to learn programming?",
+        "output": "The best way to learn programming is to start with a beginner-friendly language, practice regularly, and work on real-world projects."
+      },
+      {
+        "input": "tell me about the benefits of meditation.",
+        "output": "Meditation has many benefits, including reduced stress, improved focus, and increased self-awareness."
+      },
+      {
+        "input": "what are some popular tourist attractions in rome?",
+        "output": "Some popular tourist attractions in Rome include the Colosseum, Vatican City, and the Trevi Fountain."
+      },
+      {
+        "input": "how do i make a paper airplane?",
+        "output": "To make a paper airplane, fold a sheet of paper in half, then fold the top corners to the center, fold the resulting triangle in half, and fold the wings down."
+      },
+      {
+        "input": "what's the difference between a virus and a bacteria?",
+        "output": "Viruses are smaller than bacteria and require a host to reproduce, while bacteria are single-celled organisms that can reproduce on their own."
+      },
+      {
+        "input": "how do i grow tomatoes in a garden?",
+        "output": "To grow tomatoes in a garden, choose a sunny spot, prepare the soil, plant the tomato seedlings, and water and fertilize them regularly."
+      },
+      {
+        "input": "what's the process for getting a driver's license?",
+        "output": "The process for getting a driver's license involves studying the driver's manual, taking a written test, practicing driving with a licensed adult, and passing a road test."
+      },
+      {
+        "input": "tell me about the history of the great wall of china.",
+        "output": "The Great Wall of China was built over centuries to protect China from invasions and is considered one of the world's most impressive architectural feats."
+      },
+      {
+        "input": "how do i create a budget for personal finance?",
+        "output": "To create a budget for personal finance, track your expenses, categorize them, set financial goals, allocate funds accordingly, and review and adjust the budget regularly."
+      },
+      {
+        "input": "what are the symptoms of a common cold?",
+        "output": "Symptoms of a common cold include a runny or stuffy nose, sore throat, cough, and mild fatigue."
+      },
+      {
+        "input": "what's the best way to prepare for a job interview?",
+        "output": "To prepare for a job interview, research the company, practice common interview questions, dress professionally, and bring copies of your resume and any relevant documents."
+      },
+      {
+        "input": "how do i train a dog to sit?",
+        "output": "To train a dog to sit, hold a treat above their head, say the command 'sit,' and gently press their hindquarters down while praising them. Repeat this process consistently."
+      },
+      {
+        "input": "what's the capital of australia?",
+        "output": "The capital of Australia is Canberra."
+      },
+      {
+        "input": "tell me about the health benefits of drinking water.",
+        "output": "Drinking water has numerous health benefits, including maintaining hydration, supporting digestion, and promoting healthy skin."
+      },
+      {
+        "input": "how do i improve my public speaking skills?",
+        "output": "To improve your public speaking skills, practice regularly, prepare and rehearse your speeches, focus on body language and vocal tone, and seek feedback from others."
+      },
+      {
+        "input": "what's the best way to store fresh produce?",
+        "output": "The best way to store fresh produce is to keep them in a cool, dry place or in the refrigerator, depending on the specific fruit or vegetable."
+      },
+      {
+        "input": "how do i take care of indoor plants?",
+        "output": "To take care of indoor plants, provide them with adequate sunlight, water them regularly (but avoid overwatering), and occasionally fertilize them."
+      },
+      {
+        "input": "what's the process for applying to college?",
+        "output": "The process for applying to college involves researching and selecting schools, completing applications, submitting required documents, and potentially attending interviews or campus visits."
+      },
+      {
+        "input": "tell me about the history of the internet.",
+        "output": "The Internet was developed in the late 1960s and has since revolutionized communication and information sharing on a global scale."
+      },
+      {
+        "input": "how do i make homemade pizza?",
+        "output": "To make homemade pizza, prepare the dough, add your desired toppings, and bake it in the oven until the crust is golden and the cheese is melted."
+      },
+      {
+        "input": "what are the health benefits of regular exercise?",
+        "output": "Regular exercise has numerous health benefits, including improved cardiovascular health, increased strength and flexibility, and enhanced mood."
+      },
+      {
+        "input": "how do i take care of my laptop battery?",
+        "output": "To take care of your laptop battery, avoid overcharging it, keep it cool, and occasionally recalibrate it by fully charging and discharging."
+      },
+      {
+        "input": "what's the best way to start a small business?",
+        "output": "The best way to start a small business is to conduct market research, develop a business plan, secure funding, and take steps to establish your products or services."
+      },
+      {
+        "input": "how do i make homemade chocolate chip cookies?",
+        "output": "To make homemade chocolate chip cookies, cream butter and sugar, add eggs and vanilla extract, mix in dry ingredients and chocolate chips, and bake until golden brown."
+      },
+      {
+        "input": "what's the largest ocean in the world?",
+        "output": "The largest ocean in the world is the Pacific Ocean."
+      },
+      {
+        "input": "tell me about the health benefits of regular sleep.",
+        "output": "Regular sleep has numerous health benefits, including improved cognitive function, boosted immune system, and better overall mental and physical well-being."
+      },
+      {
+        "input": "how do i improve my photography skills?",
+        "output": "To improve your photography skills, practice regularly, learn about composition and lighting, experiment with different settings, and study the work of other photographers."
+      },
+      {
+        "input": "what's the process for buying a house?",
+        "output": "The process for buying a house involves getting pre-approved for a mortgage, finding a real estate agent, searching for homes, making an offer, and completing the closing process."
+      },
+      {
+        "input": "tell me about the history of the olympic games.",
+        "output": "The Olympic Games have a long history dating back to ancient Greece and have evolved into the international sporting event we know today."
+      },
+      {
+        "input": "how do i write a compelling resume?",
+        "output": "To write a compelling resume, highlight your relevant skills and experiences, use action verbs, tailor it to the specific job, and proofread for errors."
+      },
+      {
+        "input": "what's the best way to manage stress?",
+        "output": "The best way to manage stress is to practice relaxation techniques, engage in regular exercise, maintain a healthy lifestyle, and seek support from loved ones."
+      },
+      {
+        "input": "how do i take care of a newborn baby?",
+        "output": "To take care of a newborn baby, ensure proper feeding and burping, establish a sleep routine, keep them clean and comfortable, and provide lots of love and attention."
+      },
+      {
+        "input": "what are the symptoms of seasonal allergies?",
+        "output": "Symptoms of seasonal allergies include sneezing, itching eyes, runny nose, and congestion, often triggered by pollen or other environmental factors."
+      },
+      {
+        "input": "what's the best way to save money?",
+        "output": "The best way to save money is to create a budget, track expenses, cut back on non-essential spending, and consider automated savings or investment options."
+      },
+      {
+        "input": "how do i take care of leather shoes?",
+        "output": "To take care of leather shoes, clean them regularly with a soft cloth, apply a leather conditioner, store them in a cool, dry place, and polish them when needed."
+      },
+      {
+        "input": "what's the process for starting a blog?",
+        "output": "The process for starting a blog involves choosing a blogging platform, selecting a niche or topic, creating and publishing content, and promoting your blog to gain readership."
+      },
+      {
+        "input": "tell me about the history of space exploration.",
+        "output": "Space exploration has a rich history, from the first human-made satellites to landing on the moon and sending probes to distant planets."
+      },
+      {
+        "input": "how do i improve my time management skills?",
+        "output": "To improve your time management skills, set clear goals, prioritize tasks, eliminate distractions, delegate when possible, and use productivity tools or techniques."
+      },
+      {
+        "input": "what's the best way to handle conflicts in relationships?",
+        "output": "The best way to handle conflicts in relationships is to communicate openly, listen to each other's perspectives, seek compromise, and prioritize empathy and understanding."
+      },
+      {
+        "input": "how do i make a healthy breakfast?",
+        "output": "To make a healthy breakfast, include a balance of protein, whole grains, fruits or vegetables, and healthy fats, such as eggs with whole grain toast and avocado slices."
+      },
+      {
+        "input": "what's the process for adopting a pet?",
+        "output": "The process for adopting a pet involves researching and selecting a suitable pet, filling out an adoption application, meeting the pet, and completing the necessary paperwork."
+      },
+      {
+        "input": "tell me about the history of the roman empire.",
+        "output": "The Roman Empire was one of the most powerful and influential civilizations in history, spanning several centuries and leaving a lasting impact on culture, governance, and architecture."
+      },
+      {
+        "input": "how do i create a strong password?",
+        "output": "To create a strong password, use a combination of uppercase and lowercase letters, numbers, and symbols, and avoid using easily guessable information or common phrases."
+      },
+      {
+        "input": "what's the best way to build a professional network?",
+        "output": "The best way to build a professional network is to attend industry events, join professional organizations, leverage online platforms like LinkedIn, and engage in networking conversations."
+      },
+      {
+        "input": "how do i make a good first impression?",
+        "output": "To make a good first impression, dress appropriately, maintain good posture and eye contact, be attentive and engaged in conversations, and show genuine interest in others."
+      },
+      {
+        "input": "what are the symptoms of a migraine headache?",
+        "output": "Symptoms of a migraine headache include severe head pain, sensitivity to light and sound, nausea, and in some cases, visual disturbances or aura."
+      },
+      {
+        "input": "how do i remove a stain from clothing?",
+        "output": "To remove a stain from clothing, identify the type of stain, treat it with the appropriate stain remover or method, and wash the garment following the care instructions."
+      },
+      {
+        "input": "what's the process for filing taxes?",
+        "output": "The process for filing taxes involves gathering necessary documents, completing the appropriate tax forms, calculating income and deductions, and submitting the return to the tax authorities."
+      },
+      {
+        "input": "tell me about the history of the renaissance.",
+        "output": "The Renaissance was a period of cultural and intellectual flourishing in Europe, marked by advancements in art, literature, science, and philosophy."
+      },
+      {
+        "input": "how do i improve my creative writing skills?",
+        "output": "To improve your creative writing skills, read widely, practice writing regularly, experiment with different styles and genres, and seek feedback from peers or writing communities."
+      },
+      {
+        "input": "what's the best way to start investing in the stock market?",
+        "output": "The best way to start investing in the stock market is to educate yourself about different investment options, set financial goals, and consider working with a financial advisor."
+      },
+      {
+        "input": "how do i reduce my carbon footprint?",
+        "output": "To reduce your carbon footprint, consider using renewable energy sources, minimizing energy consumption, reducing waste, and adopting sustainable transportation options."
+      },
+      {
+        "input": "what are the symptoms of a broken bone?",
+        "output": "Symptoms of a broken bone include severe pain, swelling, bruising, deformity, and difficulty moving the affected area."
+      },
+      {
+        "input": "how do i take care of a cactus?",
+        "output": "To take care of a cactus, provide it with plenty of sunlight, water sparingly, use well-draining soil, and avoid overhandling or touching the spines."
+      },
+      {
+        "input": "what's the process for writing a research paper?",
+        "output": "The process for writing a research paper involves choosing a topic, conducting research, organizing and outlining the paper, writing the draft, and revising and editing it."
+      },
+      {
+        "input": "tell me about the history of the industrial revolution.",
+        "output": "The Industrial Revolution was a period of significant technological, economic, and social changes, marked by the transition to machine-based manufacturing and the rise of factories."
+      },
+      {
+        "input": "how do i make a healthy smoothie?",
+        "output": "To make a healthy smoothie, blend together a combination of fruits, vegetables, a liquid base (such as water or almond milk), and optional add-ins like yogurt or protein powder."
+      },
+      {
+        "input": "what's the best way to study for exams?",
+        "output": "The best way to study for exams is to create a study schedule, break down the material into manageable chunks, review and practice regularly, and use active learning techniques."
+      }
 ];
 
 // Train the model
