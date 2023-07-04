@@ -35,7 +35,7 @@ async function loadData() {
     for (const file of imageFiles) {
         const imagePath = path.join(datasetPath, file);
         const imageBuffer = fs.readFileSync(imagePath);
-        const decodedImage = tf.node.decodeImage(imageBuffer);
+        const decodedImage = /*tf.node.decodeImage(imageBuffer)*/imageBuffer;
 
         // Preprocess the image if needed (e.g., resize or normalize)
 
