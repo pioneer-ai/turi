@@ -160,7 +160,7 @@
                 addUserMessage(message);
                 fetch('/api/chat', fetchData)
                     .then(response => response.json())
-                    .then(data => handleResponse(data, message))
+                    .then(data => handleResponse(data))
                     .catch(error => {
                         console.error('Error:', error);
                         addErrorMessage(error);
@@ -169,45 +169,14 @@
             }
         }
 
-        function handleResponse(data, prompt) {
+        function handleResponse(data) {
             let answer = data.answer || 'Sorry, I do not understand.';
 
             if (answer === "*[time]") {
                 answer = "The current time is " + new Date().toLocaleTimeString() + ".";
-            } else if (answer == "*[img-cat]") {
-                let fetchData = {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        prompt: prompt
-                    }),
-                };
-
-                fetch('/api/img', imgSendData)
-                    .then(response => response.json())
-                    .then(data => {
-                        handleImgResponse(data);
-                        return;
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                        addErrorMessage(error);
-                    });
             }
 
             addBotMessage(answer);
-        }
-
-        function handleImgResponse(data) {
-            if (data.type === "img") {
-                let dataUrl = data.message;
-                addBotImg(dataUrl);
-            } else {
-                let msg = data.message;
-                addBotMessage(msg);
-            }
         }
 
         function addUserMessage(message) {

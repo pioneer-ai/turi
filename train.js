@@ -8,10 +8,6 @@ let trainingData = [
         "output": "Hello!"
     },
     {
-        "input": "generate an image of a cat",
-        "output": "*[img-cat]"
-    },
-    {
         "input": "technical info",
         "output": "Model: Naturalistic Pre-trained Generation (NPG-0) Model Codename: Kumquat Zero Model info: 146 params, 0.93MB XXS Model"
     },
