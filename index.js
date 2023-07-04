@@ -16,7 +16,7 @@ async function loadModel() {
 }
 
 // Train and save the model
-loadNpgModel()
+loadModel()
     .then(() => {
         console.log('NPG-0 model loaded successfully.');
         // Start the server after training the model
