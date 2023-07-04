@@ -130,7 +130,7 @@ async function loadModel() {
     return model;
 }
 
-function generateDataImg(prompt) {
+async function generateDataImg(prompt) {
     const model = await loadModel();
 
     // Preprocess the textual prompt (e.g., convert to numerical representation)
