@@ -3,7 +3,7 @@ const { NlpManager } = require('node-nlp');
 const fs = require('fs');
 const bodyParser = require('body-parser');
 const Filter = require('bad-words');
-import fetch from 'node-fetch';
+//import fetch from 'node-fetch';
 
 const app = express();
 const port = 8080;
