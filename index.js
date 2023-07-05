@@ -69,9 +69,9 @@ app.post('/api/chat', async (req, res) => {
 
     // Check for explicit content asynchronously
     const hasExplicitContent = await containsExplicitContent(message);
-    const isPromptUnsafe = isUnsafe(message);
+    const isUnsafe = isPromptUnsafe(message);
 
-    if (hasExplicitContent || isPromptUnsafe) {
+    if (hasExplicitContent || isUnsafe) {
         response = "I'm sorry, but I cannot respond to that request.";
         res.send({ answer: response });
         return;
@@ -96,7 +96,7 @@ function containsExplicitContent(message) {
     });
 }
 
-async function isPromptSafe(prompt) {
+async function isPromptUnsafe(prompt) {
     const perspectiveApiKey = 'AIzaSyBBOdIXmmAyKBKnpVuzgHNyThWFYIgD4ag';
     const perspectiveApiUrl = `https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=${perspectiveApiKey}`;
 
@@ -111,12 +111,12 @@ async function isPromptSafe(prompt) {
         const toxicityScore = attributeScores.TOXICITY.summaryScore.value;
 
         if (toxicityScore >= 0.7) {
-            return false; // Prompt is considered unsafe
+            return true; // Prompt is considered unsafe
         }
 
-        return true; // Prompt is safe
+        return false; // Prompt is safe
     } catch (error) {
         console.error('Error checking prompt safety:', error);
-        return false; // Error occurred, treat prompt as unsafe
+        return true; // Error occurred, treat prompt as unsafe
     }
 }
