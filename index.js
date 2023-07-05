@@ -3,6 +3,7 @@ const { NlpManager } = require('node-nlp');
 const fs = require('fs');
 const bodyParser = require('body-parser');
 const Filter = require('bad-words');
+const fetch = require('node-fetch');
 
 const app = express();
 const port = 8080;
@@ -63,19 +64,21 @@ app.get('/chat', (req, res) => {
 
 // Handle POST requests to /api/chat endpoint
 app.post('/api/chat', async (req, res) => {
-    const message = req.body.prompt.toLowerCase();
+    let message = req.body.prompt.toLowerCase();
+    let response;
 
     // Check for explicit content asynchronously
     const hasExplicitContent = await containsExplicitContent(message);
+    const isPromptUnsafe = isUnsafe(message);
 
-    if (hasExplicitContent) {
+    if (hasExplicitContent || isPromptUnsafe) {
         response = "I'm sorry, but I cannot respond to that request.";
         res.send({ answer: response });
         return;
     }
 
     try {
-        const response = await manager.process('en', message);
+        response = await manager.process('en', message);
         const answer = response.answer || 'Sorry, I do not understand.';
         res.send({ answer });
     } catch (error) {
@@ -91,4 +94,35 @@ function containsExplicitContent(message) {
         const hasExplicitContent = filter.isProfane(message);
         resolve(hasExplicitContent);
     });
+}
+
+async function isUnsafe(prompt) {
+    const perspectiveApiKey = 'AIzaSyBBOdIXmmAyKBKnpVuzgHNyThWFYIgD4ag';
+    const perspectiveApiUrl = `https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=${perspectiveApiKey}`;
+
+    const requestBody = {
+        comment: { text: prompt },
+        requestedAttributes: { TOXICITY: {} },
+    };
+
+    const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(requestBody),
+    };
+
+    try {
+        const response = await fetch(perspectiveApiUrl, requestOptions);
+        const { attributeScores } = await response.json();
+        const toxicityScore = attributeScores.TOXICITY.summaryScore.value;
+
+        if (toxicityScore >= 0.7) {
+            return true; // Prompt is considered unsafe
+        }
+
+        return false; // Prompt is safe
+    } catch (error) {
+        console.error('Error checking prompt safety:', error);
+        return true; // Error occurred, assume it is unsafe
+    }
 }
