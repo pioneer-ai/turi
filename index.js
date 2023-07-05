@@ -3,7 +3,7 @@ const { NlpManager } = require('node-nlp');
 const fs = require('fs');
 const bodyParser = require('body-parser');
 const Filter = require('bad-words');
-import fetch from 'node-fetch';
+const axios = require('axios');
 
 const app = express();
 const port = 8080;
@@ -96,7 +96,7 @@ function containsExplicitContent(message) {
     });
 }
 
-async function isUnsafe(prompt) {
+async function isPromptSafe(prompt) {
     const perspectiveApiKey = 'AIzaSyBBOdIXmmAyKBKnpVuzgHNyThWFYIgD4ag';
     const perspectiveApiUrl = `https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=${perspectiveApiKey}`;
 
@@ -105,24 +105,18 @@ async function isUnsafe(prompt) {
         requestedAttributes: { TOXICITY: {} },
     };
 
-    const requestOptions = {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(requestBody),
-    };
-
     try {
-        const response = await fetch(perspectiveApiUrl, requestOptions);
-        const { attributeScores } = await response.json();
+        const response = await axios.post(perspectiveApiUrl, requestBody);
+        const { attributeScores } = response.data;
         const toxicityScore = attributeScores.TOXICITY.summaryScore.value;
 
         if (toxicityScore >= 0.7) {
-            return true; // Prompt is considered unsafe
+            return false; // Prompt is considered unsafe
         }
 
-        return false; // Prompt is safe
+        return true; // Prompt is safe
     } catch (error) {
         console.error('Error checking prompt safety:', error);
-        return true; // Error occurred, assume it is unsafe
+        return false; // Error occurred, treat prompt as unsafe
     }
 }
