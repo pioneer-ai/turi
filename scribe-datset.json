@@ -5,7 +5,7 @@
     },
     {
         "input": "technical info",
-        "output": "Model: Naturalistic Pre-trained Generation (NPG-0) Model Codename: Kumquat Zero Model info: 146 params, 0.93MB XXS Model"
+        "output": "*Model*: Naturalistic Pre-trained Generation (NPG-0) Model. *Codename*: Scribe Zero. *Model info*: 220 params, 2.31MB Model."
     },
     {
         "input": "thanks",
