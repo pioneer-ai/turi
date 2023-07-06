@@ -5,11 +5,15 @@
     },
     {
         "input": "technical info",
-        "output": "*Model*: Naturalistic Pre-trained Generation (NPG-0) Model. *Codename*: Scribe Zero. *Model info*: 220 params, 2.31MB Model."
+        "output": "*Model*: Naturalistic Pre-trained Generation (NPG-0) Model. *Codename*: Scribe Zero. *Model info*: 221 params, 2.31MB Model."
     },
     {
         "input": "thanks",
-        "output": "Your welcome! I'm always here to help."
+        "output": "You're welcome! I'm glad I could assist you. If you have any more questions or need further help, feel free to ask."
+    },
+    {
+        "input": "okay",
+        "output": "Great! If you have any more questions or need further assistance, feel free to ask."
     },
     {
         "input": "who are you",
