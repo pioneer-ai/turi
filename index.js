@@ -3,7 +3,6 @@ const { NlpManager } = require('node-nlp');
 const fs = require('fs');
 const bodyParser = require('body-parser');
 const Filter = require('bad-words');
-const axios = require('axios');
 
 const app = express();
 const port = 8080;
@@ -69,9 +68,8 @@ app.post('/api/chat', async (req, res) => {
 
     // Check for explicit content asynchronously
     const hasExplicitContent = await containsExplicitContent(message);
-    const isUnsafe = isPromptUnsafe(message);
 
-    if (hasExplicitContent || isUnsafe) {
+    if (hasExplicitContent) {
         response = "I'm sorry, but I cannot respond to that request.";
         res.send({ answer: response });
         return;
@@ -94,29 +92,4 @@ function containsExplicitContent(message) {
         const hasExplicitContent = filter.isProfane(message);
         resolve(hasExplicitContent);
     });
-}
-
-async function isPromptUnsafe(prompt) {
-    const perspectiveApiKey = 'AIzaSyBBOdIXmmAyKBKnpVuzgHNyThWFYIgD4ag';
-    const perspectiveApiUrl = `https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=${perspectiveApiKey}`;
-
-    const requestBody = {
-        comment: { text: prompt },
-        requestedAttributes: { TOXICITY: {} },
-    };
-
-    try {
-        const response = await axios.post(perspectiveApiUrl, requestBody);
-        const { attributeScores } = response.data;
-        const toxicityScore = attributeScores.TOXICITY.summaryScore.value;
-
-        if (toxicityScore >= 0.7) {
-            return true; // Prompt is considered unsafe
-        }
-
-        return false; // Prompt is safe
-    } catch (error) {
-        console.error('Error checking prompt safety:', error);
-        return true; // Error occurred, treat prompt as unsafe
-    }
 }
