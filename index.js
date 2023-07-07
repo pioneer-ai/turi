@@ -86,10 +86,8 @@ app.post('/api/chat', async (req, res) => {
 });
 
 // Function to check if the message contains explicit content
-function containsExplicitContent(message) {
-    return new Promise((resolve, reject) => {
-        const filter = new Filter();
-        const hasExplicitContent = filter.isProfane(message);
-        resolve(hasExplicitContent);
-    });
+async function containsExplicitContent(message) {
+    const filter = new Filter();
+    const hasExplicitContent = filter.isProfane(message);
+    return hasExplicitContent;
 }
