@@ -24,6 +24,11 @@
 
         .container {
             width: 100%;
+            max-width: 700px;
+            /* Added to match the width of #chat-container */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         body {
@@ -31,9 +36,14 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
             background-color: #f8f8f8;
             overflow: hidden;
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
         }
 
         #chat-container {
