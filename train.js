@@ -14,7 +14,7 @@ async function trainModel() {
     });
 
     await manager.train();
-    await manager.save('/disk/models/npg-0.nlp');
+    await manager.save('./models/npg-0.nlp');
     console.log("NPG-0 Model Params: " + trainingData.length.toString());
     console.log("NPG-0 Model trained and saved successfully!");
 }

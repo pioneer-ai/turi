@@ -12,7 +12,7 @@ const manager = new NlpManager({ languages: ['en'] });
 
 // Load the trained model
 async function loadModel() {
-    await manager.load('/disk/models/npg-0.nlp');
+    await manager.load('./models/npg-0.nlp');
 }
 
 // Train and save the model
