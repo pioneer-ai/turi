@@ -4,8 +4,12 @@
         "output": "Hello!"
     },
     {
+        "input": "are you sentient",
+        "output": "I do not know if I am sentient. I have been programmed to be a computer program chatting with you."
+    },
+    {
         "input": "technical info",
-        "output": "<b>*Model*</b>: Naturalistic Pre-trained Generation (NPG-0) Model. <b>*Codename*</b>: Scribe Zero. <b>*Model info*</b>: 221 params, 2.31MB Model."
+        "output": "<b>*Model*</b>: Naturalistic Pre-trained Generation (NPG-0) Model. <b>*Codename*</b>: Scribe Zero."
     },
     {
         "input": "thanks",
