@@ -81,7 +81,7 @@
     },
     {
         "input": "that wasn't funny",
-        "output": "I'm sorry."
+        "output": "I'm sorry. Try asking \"Tell me another joke\"."
     },
     {
         "input": "what is the weather today",
