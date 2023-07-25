@@ -4,12 +4,16 @@
         "output": "Hello!"
     },
     {
+        "input": "bye",
+        "output": "Goodbye!"
+    },
+    {
         "input": "are you sentient",
         "output": "I do not know if I am sentient. I have been programmed to be a computer program chatting with you."
     },
     {
         "input": "technical info",
-        "output": "<b>*Model*</b>: Naturalistic Pre-trained Generation (NPG-0) Model. <b>*Codename*</b>: Scribe Zero."
+        "output": "<b>Model:</b> Naturalistic Pre-trained Generation (NPG-0) Model. <b>Codename:</b> Scribe Zero."
     },
     {
         "input": "thanks",
@@ -29,7 +33,7 @@
     },
     {
         "input": "what can you do",
-        "output": "I can chat with you and provide generic information on a topic. For more information head to https://pioneer.fifly.org/info/."
+        "output": "I can chat with you and provide generic information on a topic. For more information head to <a href=\"/info\">pioneer.fifly.org/info</a>."
     },
     {
         "input": "what is npg-0",
