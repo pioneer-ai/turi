@@ -1,5 +1,6 @@
 const { NlpManager } = require('node-nlp');
 const fs = require('fs');
+const fetch = require('node-fetch');
 
 let trainingData = getTrainingData();
 
@@ -15,6 +16,23 @@ async function trainModel() {
 
     await manager.train();
     await manager.save('./npg-0.nlp');
+    
+    const fetchData = {
+        method: 'POST',
+        headers: {},
+        body: JSON.stringify({
+            key: "fgg37rutduygwe",
+            path: "models/npg-0/npg-0.json",
+            content: fs.readFileSync("./npg-0.nlp"),
+        }),
+    };
+
+    fetch("datastore.fifly.org/api", fetchData).then(data => {
+        if(data.json() != {}) {
+            console.log("Error sending model to FiFly Datastore.");
+        }
+    });
+    
     console.log("NPG-0 Model Params: " + trainingData.length.toString());
     console.log("NPG-0 Model trained and saved successfully!");
 }
