@@ -28,9 +28,13 @@ async function trainModel() {
     };
 
     fetch("https://datastore.fifly.org/api", fetchData).then(data => {
-        if(data.json() != {}) {
+        if(data.json().success === false) {
             console.log("Error sending model to FiFly Datastore.");
+        } else {
+            console.log("Success sending model to FiFly Datastore.");
         }
+    }).catch(err => {
+        console.log("Error sending POST request to FiFly Datstore: " + err);
     });
     
     console.log("NPG-0 Model Params: " + trainingData.length.toString());
