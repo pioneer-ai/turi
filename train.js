@@ -27,7 +27,7 @@ async function trainModel() {
         }),
     };
 
-    fetch("datastore.fifly.org/api", fetchData).then(data => {
+    fetch("https://datastore.fifly.org/api", fetchData).then(data => {
         if(data.json() != {}) {
             console.log("Error sending model to FiFly Datastore.");
         }
