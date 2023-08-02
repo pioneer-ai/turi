@@ -112,6 +112,10 @@
         "output": "That's great!"
     },
     {
+        "input": "that is funny",
+        "output": "That's great!"
+    },
+    {
         "input": "those we're funny",
         "output": "Thank you!"
     },
