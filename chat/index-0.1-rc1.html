@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>Pioneer Chat</title>
+    <title>Turi 0.1 Release Candidate 1</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap">
     <style>
         .footer {
@@ -201,7 +201,7 @@
 
             if (message !== '') {
                 addUserMessage(message);
-                fetch('/api/chat', fetchData)
+                fetch('/api/chat/npg-0.1-rc1', fetchData)
                     .then(response => response.json())
                     .then(data => handleResponse(data))
                     .catch(error => {

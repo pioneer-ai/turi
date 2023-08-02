@@ -1,0 +1,270 @@
+<html>
+
+<head>
+    <title>Turi 0</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap">
+    <style>
+        .footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px;
+            background-color: #f8f8f8;
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+        }
+
+        code {
+            background-color: #171515;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 700px;
+            /* Added to match the width of #chat-container */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8f8f8;
+            overflow: hidden;
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        #chat-container {
+            width: 700px;
+            display: flex;
+            flex-direction: column;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            overflow-y: scroll;
+            max-height: 600px;
+            position: relative;
+        }
+
+        #chatBox {
+            flex-grow: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        .message {
+            color: #333;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            max-width: 70%;
+            text-align: left;
+            box-sizing: border-box;
+            overflow: scroll;
+        }
+
+        .user-message {
+            background-color: #848484;
+            color: #ffffff;
+        }
+
+        .bot-message {
+            background-color: #ababab;
+            color: #ffffff;
+        }
+
+        .error-message {
+            background-color: #ff7474;
+            color: #ffffff;
+        }
+
+        #chat-form {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            padding: 0 20px;
+        }
+
+        #userInput {
+            flex-grow: 1;
+            padding: 5px;
+            border: none;
+            border-radius: 3px;
+            margin-right: 10px;
+        }
+
+        #userInput:focus {
+            outline: none;
+        }
+
+        #sendButton {
+            border: none;
+            border-radius: 3px;
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        #sendButton:hover {
+            background-color: #0056b3;
+        }
+
+        #clearButton {
+            /* position: absolute;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%); */
+            border: none;
+            border-radius: 3px;
+            /* padding: 5px 10px; */
+            background-color: #ff7474;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        #clearButton:hover {
+            background-color: #e64c4c;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <button id="clearButton" onclick="clearChat()">Clear Chat</button>
+        <div id="chat-container">
+            <div id="chatBox"></div>
+            <form id="chat-form" onsubmit="sendMessage(); return false;">
+                <input type="text" id="userInput" placeholder="Type your message..." />
+                <button type="submit" id="sendButton">Send</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer">
+        Free Research Preview. Our services may produce inaccurate information about people, places, or facts.
+        By using our services you accept, and agree to be bound by the FiFly <a
+            href="https://terms.fifly.org/terms">Terms of Service</a>
+        and FiFly <a href="https://terms.fifly.org/privacy">Privacy Policy</a>.
+    </div>
+
+    <script>
+        let sendNo = 0;
+
+        const chatBox = document.getElementById('chatBox');
+        const userInput = document.getElementById('userInput');
+        const sendButton = document.getElementById('sendButton');
+
+        sendButton.addEventListener('click', sendMessage);
+        userInput.addEventListener('keypress', function (event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        function sendMessage() {
+            if (sendNo === 1) {
+                return;
+            }
+
+            sendNo = 1;
+
+            const message = userInput.value.trim();
+
+            let fetchData = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    prompt: message
+                }),
+            };
+
+            if (message !== '') {
+                addUserMessage(message);
+                fetch('/api/chat/npg-0', fetchData)
+                    .then(response => response.json())
+                    .then(data => handleResponse(data))
+                    .catch(error => {
+                        console.error('Error:', error);
+                        addErrorMessage(error);
+                    });
+                userInput.value = '';
+            }
+        }
+
+        function handleResponse(data) {
+            let answer = data.answer || 'Sorry, I do not understand.';
+
+            if (answer === "*[time]") {
+                answer = "The current time is " + new Date().toLocaleTimeString() + ".";
+            }
+
+            addBotMessage(answer);
+        }
+
+        function addUserMessage(message) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('message', 'user-message');
+            messageElement.textContent = message;
+            chatBox.appendChild(messageElement);
+        }
+
+        function addBotMessage(message) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('message', 'bot-message');
+            messageElement.innerHTML = message;
+            chatBox.appendChild(messageElement);
+
+            // Scroll to the bottom of the chat container
+            chatBox.scrollTop = chatBox.scrollHeight;
+            sendNo = 0;
+        }
+
+        function addBotImg(message) {
+            const messageElement = document.createElement('div');
+            const imgElement = document.createElement('img');
+            imgElement.src = message;
+            messageElement.classList.add('message', 'bot-message');
+            messageElement.appendChild(imgElement);
+            chatBox.appendChild(messageElement);
+
+            // Scroll to the bottom of the chat container
+            chatBox.scrollTop = chatBox.scrollHeight;
+            sendNo = 0;
+        }
+
+        function addErrorMessage(message) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('message', 'error-message');
+            messageElement.textContent = "Error processing request: " + message;
+            chatBox.appendChild(messageElement);
+            sendNo = 0;
+        }
+
+        function clearChat() {
+            chatBox.innerHTML = '';
+        }
+    </script>
+</body>
+
+</html>
