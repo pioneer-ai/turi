@@ -17,7 +17,7 @@
     },
     {
         "input": "technical info",
-        "output": "<b>Model:</b> Naturalistic Pre-trained Generation (NPG-0.1-rc1) Model. <b>Codename:</b> Project Turi."
+        "output": "<b>Model:</b> Naturalistic Pre-trained Generation (NPG-0.1-rc1) Model. <b>Codename:</b> Project Turi. <b>Other info:</b> I was made using Node.js, Express.js, and NLP.js! <b>Note:</b> I am just a release candidate, so, I may not provide correct responses or answers."
     },
     {
         "input": "thanks",
@@ -45,7 +45,7 @@
     },
     {
         "input": "what is npg-0.1",
-        "output": "<b>NPG-0.1</b> (Naturalistic Pre-trained Generation) is a NLP model for engaging in conversation and chatting. It is used in the chatbot Turi (Pioneer Chat)."
+        "output": "<b>NPG-0.1</b> (Naturalistic Pre-trained Generation) is a NLP model for engaging in conversation and chatting. It is used in the chatbot Turi (Pioneer Chat). Note: it is a release candidate and may not provide correct responses and answers."
     },
     {
         "input": "what company owns pioneer labs",
@@ -84,16 +84,40 @@
         "output": "Why don't scientists trust atoms? Because they make up everything!"
     },
     {
-        "input": "tell me another joke",
-        "output": "Why did the cat cross the road? Because it wanted to!"
+        "input": "tell me a joke",
+        "output": "How do you organise a space party? You plan-et! Hahaha!"
+    },
+    {
+        "input": "tell me a joke",
+        "output": "Why don't skeletons fight each other? Because they don't have the guts!"
+    },
+    {
+        "input": "tell me a joke",
+        "output": "What did the ocean say to the other ocean? Nothing, they just waved."
+    },
+    {
+        "input": "tell me a joke",
+        "output": "How does a penguin build it's house? Ig-loos it together!"
+    },
+    {
+        "input": "my name is",
+        "output": "Hello! It's great to meet you. How can I assist you?"
     },
     {
         "input": "that wasn't funny",
-        "output": "I'm sorry. Try asking \"Tell me another joke\"."
+        "output": "I'm sorry. Try asking again."
+    },
+    {
+        "input": "those we're funny",
+        "output": "That's great!"
+    },
+    {
+        "input": "those we're funny",
+        "output": "Thank you!"
     },
     {
         "input": "what is the weather today",
-        "output": "I'm sorry, I don't have access to real-time weather information."
+        "output": "I'm sorry, I don't have access to real-time weather information. But, I may in future (possibly NPG-0.2!?!)"
     },
     {
         "input": "what is the capital of France",

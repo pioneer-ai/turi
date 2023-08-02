@@ -16,8 +16,8 @@ async function trainModel() {
     await manager.train();
     await manager.save('./npg-0.1-rc1.nlp');
     
-    console.log("NPG-0 Model Params: " + trainingData.length.toString());
-    console.log("NPG-0 Model trained and saved successfully!");
+    console.log("NPG-0.1-rc1 Model Params: " + trainingData.length.toString());
+    console.log("NPG-0.1-rc1 Model trained and saved successfully!");
 }
 
 function getTrainingData() {
