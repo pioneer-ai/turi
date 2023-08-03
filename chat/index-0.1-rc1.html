@@ -129,13 +129,8 @@
         }
 
         #clearButton {
-            /* position: absolute;
-            top: 0;
-            left: 0;
-            transform: translate(-50%, -50%); */
             border: none;
             border-radius: 3px;
-            /* padding: 5px 10px; */
             background-color: #ff7474;
             color: #ffffff;
             cursor: pointer;
@@ -219,7 +214,25 @@
                 answer = "The current time is " + new Date().toLocaleTimeString() + ".";
             }
 
+            if (answer === "*[ip]") {
+                getUserIP();
+                return;
+            }
+
             addBotMessage(answer);
+        }
+
+        function getUserIP() {
+            fetch('https://api.ipify.org?format=json')
+                .then(response => response.json())
+                .then(data => {
+                    const ipAddress = data.ip;
+                    addBotMessage("Your IP address is " + ipAddress + ".");
+                })
+                .catch(error => {
+                    console.error('Error fetching IP address: ', error);
+                    addErrorMessage("Error getting IP address: " + error);
+                });
         }
 
         function addUserMessage(message) {
@@ -240,7 +253,7 @@
             sendNo = 0;
         }
 
-        function addBotImg(message) {
+        function addBotImg(imgSrc) {
             const messageElement = document.createElement('div');
             const imgElement = document.createElement('img');
             imgElement.src = message;
