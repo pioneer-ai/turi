@@ -38,7 +38,14 @@ app.use(bodyParser.json());
 
 // Redirect / to /chat
 app.get("/", (req, res) => {
-    res.redirect("/info");
+    fs.readFile('./index.html', 'utf8', (error, data) => {
+        if (error) {
+            console.error('Error reading file:', error);
+            res.status(500).send('Internal Server Error');
+        } else {
+            res.send(data);
+        }
+    });
 });
 
 // Serve ./info/index.html on /info
