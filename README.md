@@ -1,5 +1,5 @@
 # Turi
-Turi is an AI chatbot using a NLP model. There are two versions of Turi, Turi 0, and Turi 0.1-rc1. This information is only for Turi 0 ([NPG-0](https://github.com/pioneer-ai/our-ai-models/blob/main/models/npg-0.nlp)) and not Turi 0.1-rc1 ([NPG-0.1-rc1](https://github.com/pioneer-ai/our-ai-models/blob/main/models/npg-0.1-rc1.nlp)). Check out Turi 0 [here](https://pioneer.fifly.org/chat/0) and Turi 0.1-rc1 [here](https://pioneer.fifly.org/chat/0.1-rc1).
+Turi is an AI chatbot using a NLP model. There are two versions of Turi, Turi 0, and Turi 0.1-rc1. This information is only for Turi 0 (NPG-0) and not Turi 0.1-rc1 (NPG-0.1-rc1). Check out Turi 0 [here](https://pioneer.fifly.org/chat/0) and Turi 0.1-rc1 [here](https://pioneer.fifly.org/chat/0.1-rc1).
 ## Technical Information
 
 * Built using Node.js and Express.js
