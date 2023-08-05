@@ -196,7 +196,7 @@
 
             if (message !== '') {
                 addUserMessage(message);
-                fetch('/api/chat/npg-0.1-rc1', fetchData)
+                fetch('/api/chat/npg-0.1', fetchData)
                     .then(response => response.json())
                     .then(data => handleResponse(data))
                     .catch(error => {
