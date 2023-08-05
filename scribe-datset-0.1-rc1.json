@@ -760,6 +760,86 @@
     "output": "The author of 'The Hobbit' is J.R.R. Tolkien."
   },
   {
+    "input": "what is the capital city of Russia?",
+    "output": "The capital city of Russia is Moscow."
+  },
+  {
+    "input": "tell me about the Great Pyramid of Giza.",
+    "output": "The Great Pyramid of Giza is an ancient Egyptian pyramid located on the Giza Plateau near Cairo. It is the largest and oldest of the three pyramids and was built as a tomb for the Pharaoh Khufu."
+  },
+  {
+    "input": "what is the highest waterfall in the world?",
+    "output": "The highest waterfall in the world is Angel Falls in Venezuela, with a height of approximately 3,212 feet (979 meters)."
+  },
+  {
+    "input": "where is the Tower Bridge located?",
+    "output": "The Tower Bridge is located in London, United Kingdom, crossing over the River Thames."
+  },
+  {
+    "input": "name the largest island in the world.",
+    "output": "The largest island in the world is Greenland."
+  },
+  {
+    "input": "tell me about the Christ the Redeemer statue.",
+    "output": "The Christ the Redeemer statue is an iconic landmark in Rio de Janeiro, Brazil. It stands atop the Corcovado Mountain and is a symbol of Christianity and Brazilian culture."
+  },
+  {
+    "input": "what is the currency of Germany?",
+    "output": "The currency of Germany is the Euro (€)."
+  },
+  {
+    "input": "where is the Sydney Opera House located?",
+    "output": "The Sydney Opera House is located in Sydney, Australia, along the shores of Sydney Harbour."
+  },
+  {
+    "input": "name the longest mountain range in the world.",
+    "output": "The longest mountain range in the world is the Andes, which extends along the western edge of South America."
+  },
+  {
+    "input": "what is the national bird of the United States?",
+    "output": "The national bird of the United States is the Bald Eagle."
+  },
+  {
+    "input": "tell me about the Forbidden City.",
+    "output": "The Forbidden City is an imperial palace complex located in Beijing, China. It served as the home of Chinese emperors for nearly 500 years and is now a UNESCO World Heritage site."
+  },
+  {
+    "input": "which country is known as the Land of Fire and Ice?",
+    "output": "Iceland is known as the Land of Fire and Ice due to its volcanic activity and glaciers."
+  },
+  {
+    "input": "what is the largest ocean on Earth?",
+    "output": "The largest ocean on Earth is the Pacific Ocean, covering a vast area and containing numerous islands and diverse marine life."
+  },
+  {
+    "input": "tell me about the Acropolis.",
+    "output": "The Acropolis is an ancient citadel located on a rocky hill in Athens, Greece. It includes several historic buildings, most notably the Parthenon, dedicated to the goddess Athena."
+  },
+  {
+    "input": "which country is famous for the Angkor Wat temple complex?",
+    "output": "Cambodia is famous for the Angkor Wat temple complex, a stunning UNESCO World Heritage site and the largest religious monument in the world."
+  },
+  {
+    "input": "what is the official language of Italy?",
+    "output": "The official language of Italy is Italian."
+  },
+  {
+    "input": "where is the Great Barrier Reef located?",
+    "output": "The Great Barrier Reef is located off the coast of Queensland, Australia, and is the world's largest coral reef system."
+  },
+  {
+    "input": "which country is known for its beautiful fjords?",
+    "output": "Norway is known for its beautiful fjords, deep glacial valleys with stunning scenery."
+  },
+  {
+    "input": "tell me about the Serengeti National Park.",
+    "output": "The Serengeti National Park is a renowned wildlife sanctuary located in Tanzania, East Africa. It is famous for the annual wildebeest migration and is home to diverse wildlife, including the Big Five."
+  },
+  {
+    "input": "what is the national flower of Japan?",
+    "output": "The national flower of Japan is the cherry blossom (sakura)."
+  },
+  {
     "input": "tell me a famous scientist",
     "output": "One famous scientist is Charles Darwin, known for his theory of evolution by natural selection."
   },
