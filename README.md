@@ -8,7 +8,7 @@ Turi is an AI chatbot using a NLP model. There are two versions of Turi, Turi 0,
 
 ## Limitations
 
-Please note the following limitations of Turi (NPG-0):
+Please note the following limitations of Turi:
 
 * Can provide general information but may not have specific domain knowledge
 * May not understand complex or ambiguous queries
