@@ -16,13 +16,13 @@ const manager1 = new NlpManager({ languages: ['en'] });
 // Load the trained model
 async function loadModel() {
     await manager0.load('./npg-0.nlp');
-    await manager1.load('./npg-0.1-rc1.nlp');
+    await manager1.load('./npg-0.1.nlp');
 }
 
 // Train and save the model
 loadModel()
     .then(() => {
-        console.log('NPG-0 & NPG-0.1-rc1 model loaded successfully.');
+        console.log('NPG-0 & NPG-0.1 model loaded successfully.');
         // Start the server after training the model
         app.listen(port, () => {
             console.log(`Server is running on http://localhost:${port}`);
@@ -36,7 +36,6 @@ loadModel()
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// Redirect / to /chat
 app.get("/", (req, res) => {
     fs.readFile('./index.html', 'utf8', (error, data) => {
         if (error) {
@@ -73,8 +72,8 @@ app.get('/chat/0', (req, res) => {
 });
 
 // Serve ./chat/index-0.1-rc1.html on /chat
-app.get('/chat/0.1-rc1', (req, res) => {
-    fs.readFile('./chat/index-0.1-rc1.html', 'utf8', (error, data) => {
+app.get('/chat/0.1', (req, res) => {
+    fs.readFile('./chat/index-0.1.html', 'utf8', (error, data) => {
         if (error) {
             console.error('Error reading file:', error);
             res.status(500).send('Internal Server Error');
@@ -109,7 +108,7 @@ app.post('/api/chat/npg-0', async (req, res) => {
 });
 
 // Handle POST requests to /api/chat/npg-0.1-rc1 endpoint
-app.post('/api/chat/npg-0.1-rc1', async (req, res) => {
+app.post('/api/chat/npg-0.1', async (req, res) => {
     let message = req.body.prompt.toLowerCase();
     let response;
 

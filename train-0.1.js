@@ -14,14 +14,14 @@ async function trainModel() {
     });
 
     await manager.train();
-    await manager.save('./npg-0.1-rc1.nlp');
+    await manager.save('./npg-0.1.nlp');
     
-    console.log("NPG-0.1-rc1 Model Params: " + trainingData.length.toString());
-    console.log("NPG-0.1-rc1 Model trained and saved successfully!");
+    console.log("NPG-0.1 Model Params: " + trainingData.length.toString());
+    console.log("NPG-0.1 Model trained and saved successfully!");
 }
 
 function getTrainingData() {
-    return JSON.parse(fs.readFileSync("./scribe-datset-0.1-rc1.json"));
+    return JSON.parse(fs.readFileSync("./scribe-datset-0.1.json"));
 }
 
 trainModel();
