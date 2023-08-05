@@ -224,10 +224,10 @@
 
         function getUserIP() {
             const fetchData = {
-                'method': 'POST'
+                method: 'POST'
             };
 
-            fetch('https://ipget.fifly.org/api')
+            fetch('https://ipget.fifly.org/api', fetchData)
                 .then(response => response.json())
                 .then(data => {
                     if(data.success) {
