@@ -1110,5 +1110,85 @@
   {
     "input": "check if a string is a palindrome in JavaScript",
     "output": "<code>function isPalindrome(str) {\n    let reversed = str.split('').reverse().join('');\n    return str === reversed;\n}</code>"
+  },
+  {
+    "input": "what is a variable?",
+    "output": "A variable is a named container used to store data in a program."
+  },
+  {
+    "input": "what is the difference between '==' and '===' in javascript?",
+    "output": "'==' in JavaScript checks for equality in value, while '===' checks for equality in both value and data type."
+  },
+  {
+    "input": "what is the purpose of 'git' in version control?",
+    "output": "'git' is a version control system used to track changes in source code and collaborate with other developers on projects."
+  },
+  {
+    "input": "how do you declare a function in python?",
+    "output": "In Python, you declare a function using the 'def' keyword followed by the function name and parameters."
+  },
+  {
+    "input": "what is the difference between 'let', 'const', and 'var' in javascript?",
+    "output": "'let' and 'const' are block-scoped variables introduced in ES6, while 'var' is function-scoped."
+  },
+  {
+    "input": "explain the concept of object-oriented programming.",
+    "output": "Object-oriented programming is a programming paradigm where data and behavior are encapsulated together in objects."
+  },
+  {
+    "input": "how do you add an element to an array in java?",
+    "output": "In Java, you can add an element to an array using the 'Arrays.copyOf' or 'System.arraycopy' methods."
+  },
+  {
+    "input": "what is the 'this' keyword in javascript?",
+    "output": "In JavaScript, the 'this' keyword refers to the context in which a function is executed and provides access to the current object."
+  },
+  {
+    "input": "what are html tags?",
+    "output": "HTML tags are special keywords enclosed in angle brackets used to define the structure and content of a web page."
+  },
+  {
+    "input": "explain the 'for' loop in python.",
+    "output": "The 'for' loop in Python is used to iterate over a sequence (e.g., list, tuple, string) and perform an action for each item."
+  },
+  {
+    "input": "what is the purpose of css?",
+    "output": "CSS (Cascading Style Sheets) is used to control the presentation and layout of HTML documents."
+  },
+  {
+    "input": "how do you create a class in c#?",
+    "output": "In C#, you create a class using the 'class' keyword followed by the class name and class members."
+  },
+  {
+    "input": "what is the difference between 'async' and 'defer' attributes in script tags?",
+    "output": "The 'async' attribute loads and executes the script asynchronously, while the 'defer' attribute loads the script asynchronously but executes it after the HTML document is parsed."
+  },
+  {
+    "input": "explain the concept of recursion in programming.",
+    "output": "Recursion is a programming technique where a function calls itself to solve a problem by breaking it down into smaller subproblems."
+  },
+  {
+    "input": "how do you handle exceptions in java?",
+    "output": "In Java, exceptions are handled using try-catch blocks, where code that might throw an exception is placed in the 'try' block and the exception is caught and handled in the 'catch' block."
+  },
+  {
+    "input": "what is the difference between 'margin' and 'padding' in css?",
+    "output": "In CSS, 'margin' is the space outside an element, while 'padding' is the space between the content and the element's border."
+  },
+  {
+    "input": "explain the concept of inheritance in object-oriented programming.",
+    "output": "Inheritance allows a class (subclass) to inherit properties and methods from another class (superclass), promoting code reuse and creating a hierarchy of classes."
+  },
+  {
+    "input": "how do you write a 'for' loop in c++?",
+    "output": "In C++, you can write a 'for' loop using the 'for' keyword followed by the loop initialization, condition, and increment/decrement expression."
+  },
+  {
+    "input": "what is the purpose of a constructor in a class?",
+    "output": "A constructor in a class is a special method that is automatically called when an object is created, used to initialize the object's properties and set its initial state."
+  },
+  {
+    "input": "how do you remove an element from a list in python?",
+    "output": "In Python, you can remove an element from a list using the 'remove()' method or by using list slicing and creating a new list without the element."
   }
 ]
