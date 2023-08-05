@@ -644,6 +644,86 @@
     "output": "The population of the United States is over 331 million people."
   },
   {
+    "input": "what is the recipe for chicken curry?",
+    "output": "To make chicken curry, you'll need chicken pieces, onions, tomatoes, ginger, garlic, curry spices (turmeric, cumin, coriander, garam masala), coconut milk, and cilantro. Sauté the onions, garlic, and ginger, add the chicken and spices, then stir in the tomatoes and coconut milk. Simmer until the chicken is cooked through and garnish with cilantro."
+  },
+  {
+    "input": "how do I make a classic spaghetti carbonara?",
+    "output": "To make classic spaghetti carbonara, you'll need spaghetti, eggs, Pecorino Romano cheese, pancetta or bacon, black pepper, and salt. Cook the pasta until al dente, then sauté the pancetta until crispy. Whisk the eggs with cheese and pepper, then toss the drained pasta with the egg mixture and pancetta until creamy."
+  },
+  {
+    "input": "what's the recipe for shrimp scampi?",
+    "output": "To make shrimp scampi, you'll need shrimp, garlic, white wine, lemon juice, butter, olive oil, red pepper flakes, and parsley. Sauté the garlic and red pepper flakes in butter and oil, add the shrimp and cook until pink. Stir in the white wine and lemon juice, and serve over cooked pasta or with crusty bread."
+  },
+  {
+    "input": "how do you cook a perfectly seared salmon fillet?",
+    "output": "To cook a perfectly seared salmon fillet, season it with salt and pepper and preheat a skillet with oil over medium-high heat. Place the salmon in the skillet, skin-side down, and cook until the skin is crispy and the fish flakes easily with a fork."
+  },
+  {
+    "input": "what's the best way to bake a fluffy soufflé?",
+    "output": "To bake a fluffy soufflé, separate egg yolks and whites. Whisk the yolks with your choice of flavorings like cheese or chocolate. Beat the egg whites until stiff peaks form, then gently fold them into the yolk mixture. Pour into a greased soufflé dish and bake until risen and golden."
+  },
+  {
+    "input": "how do I make a classic French onion soup?",
+    "output": "To make a classic French onion soup, you'll need onions, beef broth, butter, thyme, baguette slices, and Gruyere cheese. Sauté the onions in butter until caramelized, then add thyme and beef broth. Simmer until the flavors meld, then ladle into oven-safe bowls. Top with baguette slices and Gruyere, and broil until the cheese is melted and bubbly."
+  },
+  {
+    "input": "what's the recipe for homemade pesto sauce?",
+    "output": "To make homemade pesto sauce, you'll need fresh basil, garlic, pine nuts, Parmesan cheese, olive oil, and salt. Blend the basil, garlic, and pine nuts in a food processor until finely chopped. Gradually add the olive oil to form a smooth paste, then stir in grated Parmesan and season with salt."
+  },
+  {
+    "input": "how do you make a fluffy and flavorful quiche?",
+    "output": "To make a fluffy and flavorful quiche, you'll need pie crust, eggs, milk, cheese, vegetables (such as spinach, mushrooms, or bell peppers), and cooked bacon or ham. Whisk the eggs and milk together, then mix in the cheese, vegetables, and meat. Pour into the pie crust and bake until set and golden."
+  },
+  {
+    "input": "what's the secret to making a rich and creamy risotto?",
+    "output": "The secret to making a rich and creamy risotto is to use Arborio or Carnaroli rice and to add warm broth gradually, stirring constantly until the rice absorbs the liquid. Finish with butter and Parmesan cheese for extra creaminess and flavor."
+  },
+  {
+    "input": "how do I make a classic eggs Benedict?",
+    "output": "To make classic eggs Benedict, you'll need English muffins, poached eggs, Canadian bacon or ham, and hollandaise sauce. Toast the muffins and top each half with a slice of Canadian bacon and a poached egg. Drizzle with hollandaise sauce and garnish with parsley."
+  },
+  {
+    "input": "what's the best way to cook a juicy and flavorful rack of lamb?",
+    "output": "To cook a juicy and flavorful rack of lamb, season it with herbs, garlic, and olive oil. Sear the lamb on all sides in a hot skillet, then roast it in the oven until it reaches your desired level of doneness. Let it rest before slicing and serving."
+  },
+  {
+    "input": "how do you make a traditional Japanese miso soup?",
+    "output": "To make a traditional Japanese miso soup, you'll need miso paste, dashi (Japanese stock), tofu, seaweed, and green onions. Bring the dashi to a simmer, then dissolve the miso paste in a small amount of dashi and add it to the pot. Add tofu and seaweed, and simmer until heated through. Garnish with sliced green onions."
+  },
+  {
+    "input": "what's the recipe for a classic Tiramisu dessert?",
+    "output": "To make a classic Tiramisu dessert, you'll need ladyfingers, espresso or strong coffee, mascarpone cheese, eggs, sugar, cocoa powder, and chocolate shavings. Dip the ladyfingers in coffee and layer them with a mixture of mascarpone, egg yolks, and sugar. Dust with cocoa powder and top with chocolate shavings. Refrigerate until set."
+  },
+  {
+    "input": "how do you cook the perfect juicy and tender turkey for Thanksgiving?",
+    "output": "To cook the perfect juicy and tender turkey for Thanksgiving, brine the turkey overnight in a mixture of water, salt, sugar, and herbs. Roast the turkey in the oven, basting it with melted butter or pan juices to keep it moist. Use a meat thermometer to ensure it's cooked to the proper temperature."
+  },
+  {
+    "input": "what's the secret to making a flavorful and aromatic Indian curry?",
+    "output": "The secret to making a flavorful and aromatic Indian curry is to toast and grind whole spices like cumin, coriander, cardamom, and cloves. Sauté onions, garlic, and ginger, then add the ground spices along with tomatoes and yogurt or coconut milk. Simmer until the flavors meld and the curry thickens."
+  },
+  {
+    "input": "how do you make a traditional Mexican guacamole?",
+    "output": "To make traditional Mexican guacamole, mash ripe avocados with lime juice, salt, and diced onions, tomatoes, cilantro, and jalapeño for some heat. Mix everything together until well combined, and serve with tortilla chips or as a topping for tacos and burritos."
+  },
+  {
+    "input": "what's the recipe for a creamy and comforting potato leek soup?",
+    "output": "To make a creamy and comforting potato leek soup, you'll need potatoes, leeks, onions, garlic, chicken or vegetable broth, heavy cream, and thyme. Sauté the leeks and onions, then add the potatoes, broth, and thyme. Simmer until the potatoes are tender, then blend the soup until smooth. Stir in the heavy cream and season with salt and pepper."
+  },
+  {
+    "input": "how do I make a delicious and tender beef pot roast?",
+    "output": "To make a delicious and tender beef pot roast, sear the beef on all sides in a hot skillet. Place the beef in a slow cooker or Dutch oven with onions, carrots, potatoes, garlic, and beef broth. Cook on low heat until the beef is fork-tender and the flavors meld together."
+  },
+  {
+    "input": "what's the best way to bake a perfect and flaky pie crust?",
+    "output": "To bake a perfect and flaky pie crust, use cold butter or shortening and ice water to create the dough. Handle the dough as little as possible to prevent overworking it. Chill the dough before rolling it out and place it in the pie dish. Bake until the crust is golden brown and crisp."
+  },
+  {
+    "input": "how do you make a refreshing and tangy lemon sorbet?",
+    "output": "To make a refreshing and tangy lemon sorbet, you'll need fresh lemon juice, sugar, and water. Dissolve the sugar in water and stir in the lemon juice. Freeze the mixture in an ice cream maker until it reaches a sorbet consistency."
+  },
+  {
     "input": "who is the author of 'The Catcher in the Rye'",
     "output": "The author of 'The Catcher in the Rye' is J.D. Salinger."
   },
@@ -1113,82 +1193,82 @@
   },
   {
     "input": "what is a variable?",
-    "output": "A variable is a named container used to store data in a program."
+    "output": "<code>A variable is a named container used to store data in a program.</code>"
   },
   {
     "input": "what is the difference between '==' and '===' in javascript?",
-    "output": "'==' in JavaScript checks for equality in value, while '===' checks for equality in both value and data type."
+    "output": "<code>'==' in JavaScript checks for equality in value, while '===' checks for equality in both value and data type.</code>"
   },
   {
     "input": "what is the purpose of 'git' in version control?",
-    "output": "'git' is a version control system used to track changes in source code and collaborate with other developers on projects."
+    "output": "<code>'git' is a version control system used to track changes in source code and collaborate with other developers on projects.</code>"
   },
   {
     "input": "how do you declare a function in python?",
-    "output": "In Python, you declare a function using the 'def' keyword followed by the function name and parameters."
+    "output": "<code>In Python, you declare a function using the 'def' keyword followed by the function name and parameters.</code>"
   },
   {
     "input": "what is the difference between 'let', 'const', and 'var' in javascript?",
-    "output": "'let' and 'const' are block-scoped variables introduced in ES6, while 'var' is function-scoped."
+    "output": "<code>'let' and 'const' are block-scoped variables introduced in ES6, while 'var' is function-scoped.</code>"
   },
   {
     "input": "explain the concept of object-oriented programming.",
-    "output": "Object-oriented programming is a programming paradigm where data and behavior are encapsulated together in objects."
+    "output": "<code>Object-oriented programming is a programming paradigm where data and behavior are encapsulated together in objects.</code>"
   },
   {
     "input": "how do you add an element to an array in java?",
-    "output": "In Java, you can add an element to an array using the 'Arrays.copyOf' or 'System.arraycopy' methods."
+    "output": "<code>In Java, you can add an element to an array using the 'Arrays.copyOf' or 'System.arraycopy' methods.</code>"
   },
   {
     "input": "what is the 'this' keyword in javascript?",
-    "output": "In JavaScript, the 'this' keyword refers to the context in which a function is executed and provides access to the current object."
+    "output": "<code>In JavaScript, the 'this' keyword refers to the context in which a function is executed and provides access to the current object.</code>"
   },
   {
     "input": "what are html tags?",
-    "output": "HTML tags are special keywords enclosed in angle brackets used to define the structure and content of a web page."
+    "output": "<code>HTML tags are special keywords enclosed in angle brackets used to define the structure and content of a web page.</code>"
   },
   {
     "input": "explain the 'for' loop in python.",
-    "output": "The 'for' loop in Python is used to iterate over a sequence (e.g., list, tuple, string) and perform an action for each item."
+    "output": "<code>The 'for' loop in Python is used to iterate over a sequence (e.g., list, tuple, string) and perform an action for each item.</code>"
   },
   {
     "input": "what is the purpose of css?",
-    "output": "CSS (Cascading Style Sheets) is used to control the presentation and layout of HTML documents."
+    "output": "<code>CSS (Cascading Style Sheets) is used to control the presentation and layout of HTML documents.</code>"
   },
   {
     "input": "how do you create a class in c#?",
-    "output": "In C#, you create a class using the 'class' keyword followed by the class name and class members."
+    "output": "<code>In C#, you create a class using the 'class' keyword followed by the class name and class members.</code>"
   },
   {
     "input": "what is the difference between 'async' and 'defer' attributes in script tags?",
-    "output": "The 'async' attribute loads and executes the script asynchronously, while the 'defer' attribute loads the script asynchronously but executes it after the HTML document is parsed."
+    "output": "<code>The 'async' attribute loads and executes the script asynchronously, while the 'defer' attribute loads the script asynchronously but executes it after the HTML document is parsed.</code>"
   },
   {
     "input": "explain the concept of recursion in programming.",
-    "output": "Recursion is a programming technique where a function calls itself to solve a problem by breaking it down into smaller subproblems."
+    "output": "<code>Recursion is a programming technique where a function calls itself to solve a problem by breaking it down into smaller subproblems.</code>"
   },
   {
     "input": "how do you handle exceptions in java?",
-    "output": "In Java, exceptions are handled using try-catch blocks, where code that might throw an exception is placed in the 'try' block and the exception is caught and handled in the 'catch' block."
+    "output": "<code>In Java, exceptions are handled using try-catch blocks, where code that might throw an exception is placed in the 'try' block and the exception is caught and handled in the 'catch' block.</code>"
   },
   {
     "input": "what is the difference between 'margin' and 'padding' in css?",
-    "output": "In CSS, 'margin' is the space outside an element, while 'padding' is the space between the content and the element's border."
+    "output": "<code>In CSS, 'margin' is the space outside an element, while 'padding' is the space between the content and the element's border.</code>"
   },
   {
     "input": "explain the concept of inheritance in object-oriented programming.",
-    "output": "Inheritance allows a class (subclass) to inherit properties and methods from another class (superclass), promoting code reuse and creating a hierarchy of classes."
+    "output": "<code>Inheritance allows a class (subclass) to inherit properties and methods from another class (superclass), promoting code reuse and creating a hierarchy of classes.</code>"
   },
   {
     "input": "how do you write a 'for' loop in c++?",
-    "output": "In C++, you can write a 'for' loop using the 'for' keyword followed by the loop initialization, condition, and increment/decrement expression."
+    "output": "<code>In C++, you can write a 'for' loop using the 'for' keyword followed by the loop initialization, condition, and increment/decrement expression.</code>"
   },
   {
     "input": "what is the purpose of a constructor in a class?",
-    "output": "A constructor in a class is a special method that is automatically called when an object is created, used to initialize the object's properties and set its initial state."
+    "output": "<code>A constructor in a class is a special method that is automatically called when an object is created, used to initialize the object's properties and set its initial state.</code>"
   },
   {
     "input": "how do you remove an element from a list in python?",
-    "output": "In Python, you can remove an element from a list using the 'remove()' method or by using list slicing and creating a new list without the element."
+    "output": "<code>In Python, you can remove an element from a list using the 'remove()' method or by using list slicing and creating a new list without the element.</code>"
   }
 ]
