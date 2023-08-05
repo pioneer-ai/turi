@@ -223,11 +223,19 @@
         }
 
         function getUserIP() {
-            fetch('https://api.ipify.org?format=json')
+            const fetchData = {
+                'method': 'POST'
+            };
+
+            fetch('https://ipget.fifly.org/api')
                 .then(response => response.json())
                 .then(data => {
-                    const ipAddress = data.ip;
-                    addBotMessage("Your IP address is " + ipAddress + ".");
+                    if(data.success) {
+                        addBotMessage("Your IP address is " + data.ip + ".");
+                    } else {
+                        console.error('Error fetching IP address: ', data.error);
+                        addErrorMessage("Error getting IP address: " + data.error);
+                    }
                 })
                 .catch(error => {
                     console.error('Error fetching IP address: ', error);
