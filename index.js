@@ -47,9 +47,9 @@ app.get("/", (req, res) => {
     });
 });
 
-// Serve ./info/index.html on /info
-app.get("/info", (req, res) => {
-    fs.readFile('./info/index.html', 'utf8', (error, data) => {
+// Serve ./turi/index.html on /turi
+app.get("/turi", (req, res) => {
+    fs.readFile('./turi/index.html', 'utf8', (error, data) => {
         if (error) {
             console.error('Error reading file:', error);
             res.status(500).send('Internal Server Error');
@@ -59,7 +59,7 @@ app.get("/info", (req, res) => {
     });
 });
 
-// Serve ./chat/index-0.html on /chat
+// Serve ./chat/index-0.html on /chat/0
 app.get('/chat/0', (req, res) => {
     fs.readFile('./chat/index-0.html', 'utf8', (error, data) => {
         if (error) {
@@ -71,7 +71,7 @@ app.get('/chat/0', (req, res) => {
     });
 });
 
-// Serve ./chat/index-0.1-rc1.html on /chat
+// Serve ./chat/index-0.1.html on /chat/0.1
 app.get('/chat/0.1', (req, res) => {
     fs.readFile('./chat/index-0.1.html', 'utf8', (error, data) => {
         if (error) {
@@ -107,7 +107,7 @@ app.post('/api/chat/npg-0', async (req, res) => {
     }
 });
 
-// Handle POST requests to /api/chat/npg-0.1-rc1 endpoint
+// Handle POST requests to /api/chat/npg-0.1 endpoint
 app.post('/api/chat/npg-0.1', async (req, res) => {
     let message = req.body.prompt.toLowerCase();
     let response;
