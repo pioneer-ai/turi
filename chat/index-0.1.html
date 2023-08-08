@@ -277,7 +277,7 @@
         function addErrorMessage(message) {
             const messageElement = document.createElement('div');
             messageElement.classList.add('message', 'error-message');
-            messageElement.textContent = "Error processing request: " + message;
+            messageElement.textContent = "Oops! That's an error: " + message;
             chatBox.appendChild(messageElement);
             sendNo = 0;
         }
