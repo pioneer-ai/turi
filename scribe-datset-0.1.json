@@ -32,6 +32,18 @@
     "output": "Great! If you have any more questions or need further assistance, feel free to ask."
   },
   {
+    "input": "cool",
+    "output": "Superb! If you have any more questions or need further assistance, feel free to ask."
+  },
+  {
+    "input": "that's cool",
+    "output": "Amazing! If you have any more questions or need further assistance, feel free to ask."
+  },
+  {
+    "input": "thats cool",
+    "output": "Super! If you have any more questions or need further assistance, feel free to ask."
+  },
+  {
     "input": "who are you",
     "output": "I'm Turi - Your AI chatbot."
   },
