@@ -160,6 +160,7 @@
     </div>
 
     <div class="footer">
+        <b>This is a outdated version. <a href="https://pioneer.fifly.org/chat/0.1">Try version 0.1 instead</a>.</b>
         Free Research Preview. Our services may produce inaccurate information about people, places, or facts.
         By using our services you accept, and agree to be bound by the FiFly <a
             href="https://terms.fifly.org/terms">Terms of Service</a>
@@ -233,19 +234,6 @@
             const messageElement = document.createElement('div');
             messageElement.classList.add('message', 'bot-message');
             messageElement.innerHTML = message;
-            chatBox.appendChild(messageElement);
-
-            // Scroll to the bottom of the chat container
-            chatBox.scrollTop = chatBox.scrollHeight;
-            sendNo = 0;
-        }
-
-        function addBotImg(message) {
-            const messageElement = document.createElement('div');
-            const imgElement = document.createElement('img');
-            imgElement.src = message;
-            messageElement.classList.add('message', 'bot-message');
-            messageElement.appendChild(imgElement);
             chatBox.appendChild(messageElement);
 
             // Scroll to the bottom of the chat container
