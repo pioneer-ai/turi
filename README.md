@@ -36,3 +36,14 @@ Turi can be used for:
 We are working to add context and follow-ups to later models.
 
 Feel free to interact with Turi and explore its capabilities!
+
+## Contributors
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
