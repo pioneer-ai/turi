@@ -11,4 +11,4 @@ currently being supported with security updates.
 
 ## Reporting a Vulnerability
 
-To report a vulnerability, email <a href="mailto:security.turi@fifly.org">security.turi@fifly.org</a> with a detailed report about the vulnerability and the part of code it is in. We will work to fix it immediately. You will **not** be replied to in email, but added as a contributor to the project.
+To report a vulnerability, Head to the Security tab of this GitHub repo and click "Advisories" and add a new vulnerability. We will work to fix it immediately.
