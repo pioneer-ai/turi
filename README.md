@@ -39,11 +39,7 @@ Feel free to interact with Turi and explore its capabilities!
 
 ## Contributors
 
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
+Want your name featured here? Contribute to this repository!
 
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
+### **Main contributors**
+* [@proplayer919](https://github.com/proplayer919) - All contributions
