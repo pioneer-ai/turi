@@ -80,22 +80,6 @@
     "output": "I'm good, thank you!"
   },
   {
-    "input": "what is my ip",
-    "output": "*[ip]"
-  },
-  {
-    "input": "what is my ip address",
-    "output": "*[ip]"
-  },
-  {
-    "input": "give me my ip",
-    "output": "*[ip]"
-  },
-  {
-    "input": "give me my ip address",
-    "output": "*[ip]"
-  },
-  {
     "input": "show me your changelog",
     "output": "<b>NPG Model Changelog:</b> <i>NPG-0:</i> Added base functionality, greetings, world data, and all base phrases (Scribe Dataset 0). <i>NPG-0.1:</i> Added response for saying your name, more comprehensive technical details, new jokes, storytelling, this changelog, more world data, more culinary data, and ability for detection and reporting of your IP address (Scribe Dataset 0.1)."
   },

@@ -161,6 +161,17 @@
         and FiFly <a href="https://terms.fifly.org/privacy">Privacy Policy</a>.
     </div>
 
+    <div>
+        <label for="languageSelect">Select Language:</label>
+        <select id="languageSelect">
+            <option value="en">English</option>
+            <option value="fr">French</option>
+            <option value="es">Spanish</option>
+            <!-- Add more language options as needed -->
+        </select>
+    </div>
+
+
     <script>
         let sendNo = 0;
 
@@ -183,6 +194,7 @@
             sendNo = 1;
 
             const message = userInput.value.trim();
+            const selectedLanguage = document.getElementById('languageSelect').value;
 
             let fetchData = {
                 method: 'POST',
@@ -190,56 +202,38 @@
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    prompt: message
+                    prompt: message,
+                    lang: selectedLanguage
                 }),
             };
 
             if (message !== '') {
                 addUserMessage(message);
+
                 fetch('/api/chat/npg-0.1', fetchData)
                     .then(response => response.json())
-                    .then(data => handleResponse(data))
+                    .then(data => handleResponse(data, selectedLanguage))
                     .catch(error => {
                         console.error('Error:', error);
                         addErrorMessage(error);
                     });
+
                 userInput.value = '';
             }
         }
 
-        function handleResponse(data) {
+
+        function handleResponse(data, selectedLanguage) {
             let answer = data.answer || 'Sorry, I do not understand.';
 
             if (answer === "*[time]") {
                 answer = "The current time is " + new Date().toLocaleTimeString() + ".";
             }
 
-            if (answer === "*[ip]") {
-                getUserIP();
-                return;
-            }
-
-            addBotMessage(answer);
-        }
-
-        function getUserIP() {
-            const fetchData = {
-                method: 'POST'
-            };
-
-            fetch('https://ipget.fifly.org/api', fetchData)
-                .then(response => response.json())
-                .then(data => {
-                    if(data.success) {
-                        addBotMessage("Your IP address is " + data.ip + ".");
-                    } else {
-                        console.error('Error fetching IP address: ', data.error);
-                        addErrorMessage("Error getting IP address: " + data.error);
-                    }
-                })
-                .catch(error => {
-                    console.error('Error fetching IP address: ', error);
-                    addErrorMessage("Error getting IP address: " + error);
+            // Translate the answer back to the selected language
+            translateText(answer, 'en', selectedLanguage)
+                .then(translatedAnswer => {
+                    addBotMessage(translatedAnswer);
                 });
         }
 
@@ -285,6 +279,14 @@
         function clearChat() {
             chatBox.innerHTML = '';
         }
+
+        async function translateText(text, sourceLang, targetLang) {
+            const apiKey = 'YOUR_API_KEY'; // Replace with your Google Translate API key
+            const response = await fetch(`https://translation.googleapis.com/language/translate/v2?key=${apiKey}&source=${sourceLang}&target=${targetLang}&q=${encodeURIComponent(text)}`);
+            const data = await response.json();
+            return data.data.translations[0].translatedText;
+        }
+
     </script>
 </body>
 
