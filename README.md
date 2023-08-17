@@ -39,7 +39,7 @@ Feel free to interact with Turi and explore its capabilities!
 
 ## Contributors
 
-Want your name featured here? Contribute to this repository! More notes in [CONTRIBUTING.md](/CONTRIBUTING.md).
+Want your name featured here? Contribute to this repository! More notes in [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 ### **Main contributors**
-* [@proplayer919](https://github.com/proplayer919) - All contributions yet
+* [@proplayer919](https://github.com/proplayer919) - All contributions yet.
