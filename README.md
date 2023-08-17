@@ -1,5 +1,5 @@
 # Turi
-Turi is an AI chatbot using a NLP model. There are two versions of Turi, Turi 0, and Turi 0.1-rc1. Check out Turi 0 [here](https://pioneer.fifly.org/chat/0) and Turi 0.1 [here](https://pioneer.fifly.org/chat/0.1).
+Turi is an AI chatbot using a NLP model. Check out Turi 0.* [here](https://pioneer.fifly.org/chat/0) and Turi 0.1.* [here](https://pioneer.fifly.org/chat/0.1).
 ## Technical Information
 
 * Built using Node.js and Express.js
@@ -39,7 +39,7 @@ Feel free to interact with Turi and explore its capabilities!
 
 ## Contributors
 
-Want your name featured here? Contribute to this repository!
+Want your name featured here? Contribute to this repository! More notes in [CONTRIBUTING.md](/CONTRIBUTING.md).
 
 ### **Main contributors**
-* [@proplayer919](https://github.com/proplayer919) - All contributions
+* [@proplayer919](https://github.com/proplayer919) - All contributions yet
