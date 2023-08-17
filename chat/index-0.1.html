@@ -161,16 +161,6 @@
         and FiFly <a href="https://terms.fifly.org/privacy">Privacy Policy</a>.
     </div>
 
-    <div>
-        <label for="languageSelect">Select Language:</label>
-        <select id="languageSelect">
-            <option value="en">English</option>
-            <option value="fr">French</option>
-            <option value="es">Spanish</option>
-            <!-- Add more language options as needed -->
-        </select>
-    </div>
-
 
     <script>
         let sendNo = 0;
@@ -194,7 +184,6 @@
             sendNo = 1;
 
             const message = userInput.value.trim();
-            const selectedLanguage = document.getElementById('languageSelect').value;
 
             let fetchData = {
                 method: 'POST',
@@ -202,8 +191,7 @@
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    prompt: message,
-                    lang: selectedLanguage
+                    prompt: message
                 }),
             };
 
@@ -212,7 +200,7 @@
 
                 fetch('/api/chat/npg-0.1', fetchData)
                     .then(response => response.json())
-                    .then(data => handleResponse(data, selectedLanguage))
+                    .then(data => handleResponse(data))
                     .catch(error => {
                         console.error('Error:', error);
                         addErrorMessage(error);
@@ -223,18 +211,14 @@
         }
 
 
-        function handleResponse(data, selectedLanguage) {
+        function handleResponse(data) {
             let answer = data.answer || 'Sorry, I do not understand.';
 
             if (answer === "*[time]") {
                 answer = "The current time is " + new Date().toLocaleTimeString() + ".";
             }
-
-            // Translate the answer back to the selected language
-            translateText(answer, 'en', selectedLanguage)
-                .then(translatedAnswer => {
-                    addBotMessage(translatedAnswer);
-                });
+            
+            addBotMessage(answer);
         }
 
         function addUserMessage(message) {
@@ -280,12 +264,12 @@
             chatBox.innerHTML = '';
         }
 
-        async function translateText(text, sourceLang, targetLang) {
+        /*async function translateText(text, sourceLang, targetLang) {
             const apiKey = 'YOUR_API_KEY'; // Replace with your Google Translate API key
             const response = await fetch(`https://translation.googleapis.com/language/translate/v2?key=${apiKey}&source=${sourceLang}&target=${targetLang}&q=${encodeURIComponent(text)}`);
             const data = await response.json();
             return data.data.translations[0].translatedText;
-        }
+        }*/
 
     </script>
 </body>
