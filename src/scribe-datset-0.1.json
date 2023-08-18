@@ -76,6 +76,10 @@
     "output": "<b>Hi!</b>"
   },
   {
+    "input": "play some music",
+    "output": "*[music]"
+  },
+  {
     "input": "how are you",
     "output": "I'm good, thank you!"
   },
