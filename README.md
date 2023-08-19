@@ -1,5 +1,7 @@
 # Turi
 Turi is an AI chatbot using a NLP model. Check out Turi 0.* [here](https://pioneer.fifly.org/chat/0) and Turi 0.1.* [here](https://pioneer.fifly.org/chat/0.1).
+Check out the changelog [here](./CHANGELOG.md), the contributions guide [here](./CONTRIBUTING.md), the security policy [here](SECURITY.md), and the building guide [here](./BUILDING.md).
+
 ## Technical Information
 
 * Built using Node.js and Express.js
@@ -24,7 +26,6 @@ Please note the following limitations of Turi:
 ## Usage
 
 Turi can be used for:
-
 * Answering frequently asked questions
 * Providing basic information about a topic
 * Engaging in casual conversations
