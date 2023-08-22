@@ -200,7 +200,14 @@
                 addUserMessage(message);
 
                 fetch('/api/chat/npg-0.1', fetchData)
-                    .then(response => response.json())
+                    .then(response => {
+                        if(response.json() === "Too many requests, please try again later.") {
+                            return {
+                                answer: "Too many requests, please try again later."
+                            };
+                        }
+                        return response.json();
+                    })
                     .then(data => handleResponse(data))
                     .catch(error => {
                         console.error('Error:', error);
