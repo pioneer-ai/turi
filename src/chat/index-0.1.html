@@ -218,10 +218,6 @@
             if (answer === "*[time]") {
                 answer = "The current time is " + new Date().toLocaleTimeString() + ".";
             }
-
-            if (answer === "*[music]") {
-                answer = "Sure! Here's some classical music: <audio><controls></controls><source src=\"datastore.fifly.org/content/audio/turi-music-1.mp3\">I'm sorry, your browser doesn't support audio. Try updating your browser.</audio>"
-            }
             
             addBotMessage(answer);
         }
