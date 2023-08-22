@@ -99,7 +99,6 @@ app.post('/api/chat/npg-0', async (req, res) => {
 
     try {
         response = await manager0.process('en', message);
-        const answer = response.answer || 'Sorry, I do not understand.';
         res.send({ answer });
     } catch (error) {
         console.error('Error processing message:', error);
