@@ -204,11 +204,6 @@
                 addUserMessage(message);
                 fetch('/api/chat/npg-0', fetchData)
                     .then(response => {
-                        if(response.json() === "Too many requests, please try again later.") {
-                            return {
-                                answer: "Too many requests, please try again later."
-                            };
-                        }
                         return response.json();
                     })
                     .then(data => handleResponse(data))

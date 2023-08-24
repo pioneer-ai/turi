@@ -7,13 +7,6 @@ const Filter = require('bad-words');
 const app = express();
 const port = 8080;
 
-// Set up rate limiter: maximum of twenty requests per minute
-var RateLimit = require('express-rate-limit');
-var limiter = RateLimit({
-  windowMs: 1*60*1000, // 1 minute
-  max: 20
-});
-
 // apply rate limiter to all requests
 app.use(limiter);
 
