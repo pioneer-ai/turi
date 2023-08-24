@@ -7,9 +7,6 @@ const Filter = require('bad-words');
 const app = express();
 const port = 8080;
 
-// apply rate limiter to all requests
-app.use(limiter);
-
 // Create an instance of the NLP manager
 const manager0 = new NlpManager({ languages: ['en'] });
 
