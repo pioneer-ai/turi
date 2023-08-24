@@ -584,6 +584,10 @@
     "output": "The largest city in Canada is Toronto."
   },
   {
+    "input": "are you sus",
+    "output": "What? No! I'm not sus. No, wait. Please don't do emergency meeting! Ah. Stop! I told you! I'm not the imposter. Please don't vote on me you guys!"
+  },
+  {
     "input": "tell me a famous actress",
     "output": "One famous actress is Audrey Hepburn, known for her iconic roles in movies like 'Breakfast at Tiffany's'."
   },
