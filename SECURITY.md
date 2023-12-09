@@ -4,10 +4,10 @@
 
 Here are the versions that are supported for security vulnerability reporting.
 
-| Version | Supported          |
-| ------- | ------------------ |
-| Version 0.1.* (Turi 0.1.\*, NPG-0.1.\*, Scribe 0.1.*)   | ✅ |
-| Version 0.* (Turi 0.\*, NPG-0.\*, Scribe 0.*)   | ❎ |
+| Version     | Supported          |
+| ----------- | ------------------ |
+| Version 0.1 | ✅                |
+| Version 0   | ❌                |
 
 ## Reporting a Vulnerability
 
